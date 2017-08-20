@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Git | 丁小鲁的博客</title>
+  <title>Ng-03多元线性回归 | 丁小鲁的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SEU-17级IC硕士生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="丁小鲁的博客">
-<meta property="og:url" content="http://yoursite.com/tags/Git/index.html">
+  <meta name="description" content="多元线性回归1. 多重特征​    多个特征下的线性回归问题又称为：多元线性回归。这里有几个专用名词需要解释一下：  $x_{j}^{i}$表示第i个训练样本中的第j歌特征值 $x^i$表示第i个训练样本的所有特征，一般是以列向量来表示。 m表示的是训练集的个数  ​">
+<meta name="keywords" content="机器学习,Ng笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ng-03多元线性回归">
+<meta property="og:url" content="http://yoursite.com/2017/06/07/Ng03/index.html">
 <meta property="og:site_name" content="丁小鲁的博客">
-<meta property="og:description" content="SEU-17级IC硕士生">
+<meta property="og:description" content="多元线性回归1. 多重特征​    多个特征下的线性回归问题又称为：多元线性回归。这里有几个专用名词需要解释一下：  $x_{j}^{i}$表示第i个训练样本中的第j歌特征值 $x^i$表示第i个训练样本的所有特征，一般是以列向量来表示。 m表示的是训练集的个数  ​">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgcsgf29fpj209w05daa5.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgcsgfo84xj20ft08j3zw.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgctjdk1pqj20dp070aan.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgctjdwwvuj20e3075dgc.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgdv8r4ymyj20gi080jsc.jpg">
+<meta property="og:updated_time" content="2017-08-20T14:30:25.946Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="丁小鲁的博客">
-<meta name="twitter:description" content="SEU-17级IC硕士生">
+<meta name="twitter:title" content="Ng-03多元线性回归">
+<meta name="twitter:description" content="多元线性回归1. 多重特征​    多个特征下的线性回归问题又称为：多元线性回归。这里有几个专用名词需要解释一下：  $x_{j}^{i}$表示第i个训练样本中的第j歌特征值 $x^i$表示第i个训练样本的所有特征，一般是以列向量来表示。 m表示的是训练集的个数  ​">
+<meta name="twitter:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgcsgf29fpj209w05daa5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="丁小鲁的博客" type="application/atom+xml">
   
@@ -151,60 +159,240 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Ng03" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/20/Learn-git-GitHub/" class="archive-article-date">
-  	<time datetime="2017-08-20T09:59:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/20/Learn-git-GitHub/">Learn git&amp;GitHub</a>
+    <h1 class="article-title" itemprop="name">
+      Ng-03多元线性回归
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/06/07/Ng03/" class="archive-article-date">
+  	<time datetime="2017-06-07T10:44:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h1><h3 id="1-多重特征"><a href="#1-多重特征" class="headerlink" title="1. 多重特征"></a>1. 多重特征</h3><p>​    多个特征下的线性回归问题又称为：<strong>多元线性回归</strong>。这里有几个专用名词需要解释一下：</p>
+<ul>
+<li>$x_{j}^{i}$表示第i个训练样本中的第j歌特征值</li>
+<li>$x^i$表示第i个训练样本的所有特征，一般是以列向量来表示。</li>
+<li>m表示的是训练集的个数</li>
+</ul>
+<p>​ <a id="more"></a></p>
+<p>​    多元形式下的假设函数可以设为：$h_\theta(x)=\theta_0+\theta_1x_1+\theta_2x_2+…+\theta_nx_n$ ，为更直观的表示这个函数，我们将$\theta_0$看作房子的基本价格，将$\theta_1$看为每平方米的价格，将$\theta_2$看为每层的价格，等等。此时$x_1$表示的是房子的平方米，$x_2$为房屋的楼层数，等等。以矩阵的形式表达为：</p>
+<p>$h_{\theta}(x)=[\theta_0 \theta_1 … \theta_n]\begin{bmatrix}x_0\ x_1\..\ \end{bmatrix}=\theta^Tx$</p>
+<h3 id="2-多变量下的梯度下降法"><a href="#2-多变量下的梯度下降法" class="headerlink" title="2. 多变量下的梯度下降法"></a>2. 多变量下的梯度下降法</h3><p>​    梯度下降的表现形式相同，这里将特征数拓广至n个：（重复运行直至集聚）</p>
+<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgcsgf29fpj209w05daa5.jpg" alt="mul-var convergrnce"><br><br></div>
+
+<p>​    可以简写为公式代表：$\theta_j :=\theta<em>j - \alpha\frac{1}{m}\sum</em>{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})\cdot x_j^{(i)}$其中j=0、1、…n</p>
+<p>​    具体的，可以通过下图对单变量和多特征变量下的梯度算法进行比较：</p>
+<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgcsgfo84xj20ft08j3zw.jpg" alt="grad descent"><br><br></div>
+
+<h3 id="3-梯度下降之特征缩放"><a href="#3-梯度下降之特征缩放" class="headerlink" title="3. 梯度下降之特征缩放"></a>3. 梯度下降之特征缩放</h3><p>​    我们可以同过将输入的值统一在同一个范围内以加快梯度下降的运算速度，这是因为参数$\theta$在较小的数集中相比较大的数集变化快，且较大的数集下，会出现很长时间的震荡现象（即在最小值附近徘徊）。这里介绍一种有效的方式，主要通过改变输入的值在相同的范围内以规避以上的不利现象。</p>
+<p>​    理想的情况 为：$-1\leq x<em>{(i)}\leq1$或$-0.5\leq x</em>{(i)}\leq0.5$</p>
+<p>​    主要有两种技术以统一变量：<strong>特征缩放</strong>（feature scaling）和<strong>均值归一化处理</strong> (mean normalization)</p>
+<p>​    特征缩放将输入变量除以输入值的范围（即最大值减去最小值），从而在一个新的范围只有1。均值归一化包括从输入变量的值减去输入变量的平均值，从而使输入变量的新平均值为零，具体如下：$x_i := \frac{x_i-\mu _i}{s_i}$</p>
+<p>​    式中的$\mu_i$表示输入特征值得平均值，$s_i$可为取值范围（最大-最小），或可为标准差。</p>
+<p>​    比如：对于$x_i$代表房价，其范围为100-2000，其平均值为1000，有：$x_i := \frac{price-\mu _i}{s_i}$</p>
+<h3 id="4-学习速率"><a href="#4-学习速率" class="headerlink" title="4. 学习速率"></a>4. 学习速率</h3><p>​    调试梯度下降：将每一步计算出的代价函数$J(\theta)$绘出图形，当代价函数函数有上升趋势时，或许该降低学习速率$\alpha$取值。</p>
+<p>​    当每一步下的代价函数的计算值在缩减，且缩减小于某个值E(这里E的取值一般小于$10^{-3}$，此时可以说明代价函数已经收敛（汇集），但一般该限值E很难确定。</p>
+<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgctjdk1pqj20dp070aan.jpg" alt="alpha"><br><br></div>
+
+<p>​    可以说明：当学习速率$\alpha$足够下，代价函数每一步都会在减少。</p>
+<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgctjdwwvuj20e3075dgc.jpg" alt="learning rate"><br><br></div>
+
+<p>​    总结一下：如果学习速率$\alpha$的取值过小会导致汇集很慢，同样当该值较大时，可等导致每一步并不都是递增，从而不会汇聚。<strong>一定要确保梯度下降运行的正确</strong> </p>
+<h3 id="5-多特征与多项式回归"><a href="#5-多特征与多项式回归" class="headerlink" title="5. 多特征与多项式回归"></a>5. 多特征与多项式回归</h3><p>​    我们可以将多个特征组合为一个，比如：我们可以将$x_1$和$x_2$组合成一个$x_3=x_1<em>x_2$ 此外还可以将特征进行平方、立方等，这样做的原因是：我们<em>*基于线性回归的假设方程不足以很好的适应所有数据集</em></em>。例如：起初的假设函数为：$h_\theta(x)=\theta_0+\theta_1x<em>1$,我们可以在此基础之上增加一个平方项和立方项为：$h</em>\theta(x)=\theta_0+\theta_1x_1+\theta_1x_1^2+\theta_1x_1^3$。 </p>
+<p><strong>这里需要注意：当利用多项式回归时，不可忘记在上一部分所谈到的特征缩放，因为立方项与平方后的特征值是很大的，这不利于算法的快捷运算</strong> </p>
+<h3 id="6-正则方程（Normal-Equation）"><a href="#6-正则方程（Normal-Equation）" class="headerlink" title="6. 正则方程（Normal Equation）"></a>6. 正则方程（Normal Equation）</h3><p>​    梯度下降是最小化代价函数$J(\theta)$的一种方式，这里提出了另一种方式即正则方式不使用迭代方式：$\theta = (X^TX)^{-1}X^Ty$。<em>在正则方式中不需要对正则方程做尺度缩放。</em></p>
+<p>​    举例如下（m=4）</p>
+<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgdv8r4ymyj20gi080jsc.jpg" alt="normal equation"><br><br></div>
+
+<p>​    下表给出了对于正则方程与梯度下降方法中差异：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>梯度下降</strong></th>
+<th style="text-align:left"><strong>正则方程</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">需要选择学习速率alpha</td>
+<td style="text-align:left">不需选择alpha</td>
+</tr>
+<tr>
+<td style="text-align:left">需要更多的步骤</td>
+<td style="text-align:left">不需要更多的迭代</td>
+</tr>
+<tr>
+<td style="text-align:left">算法复杂度($kn^2$)</td>
+<td style="text-align:left">算法复杂度($n^3$)，且需要计算$X^TX$</td>
+</tr>
+<tr>
+<td style="text-align:left">n值很大时，本方法以上很好运行</td>
+<td style="text-align:left">n的数值越大，计算越慢</td>
+</tr>
+</tbody>
+</table>
+<p>​    从最后一项可以看出，随n的增大，计算的速度越慢。实际操作中，当n超过10000时，利用梯度下降将是比正则方程更优的选择。</p>
+<p><strong><em>(补充)</em></strong>：关于正则方程X不可逆的问题</p>
+<p>​    一般可能是以下两种原因导致$X^TX$不可逆的情形出现：</p>
+<ul>
+<li>冗余特征出现：即特征集中出现了两个特征非常密切相关的（可以说是线性相关的）</li>
+<li>含有太多的特征（如$m\leq n$）。此时可以对特征做适量的删减或使用正规则化（此部分在后面会接触）</li>
+</ul>
+<p>​       实际的编程工具中，我们一般使用octave或matlab软件，而取逆函数名选取”pinv”而非”inv”，此时即使不可逆仍然能够给出一个值。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/07/Ng03/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/06/08/Ng04/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Ng-04练习题EX1
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/06/06/Ng02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ng-02单向量下的线性回归</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多元线性回归"><span class="toc-number">1.</span> <span class="toc-text">多元线性回归</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-多重特征"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 多重特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-多变量下的梯度下降法"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 多变量下的梯度下降法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-梯度下降之特征缩放"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 梯度下降之特征缩放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-学习速率"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 学习速率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-多特征与多项式回归"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 多特征与多项式回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-正则方程（Normal-Equation）"><span class="toc-number">1.0.6.</span> <span class="toc-text">6. 正则方程（Normal Equation）</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -227,9 +415,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

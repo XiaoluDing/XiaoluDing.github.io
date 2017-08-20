@@ -6,18 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Git | 丁小鲁的博客</title>
+  <title>Ng-02单向量下的线性回归 | 丁小鲁的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SEU-17级IC硕士生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="丁小鲁的博客">
-<meta property="og:url" content="http://yoursite.com/tags/Git/index.html">
+  <meta name="description" content="单变量下的线性回归系统1. 模型建立（术语介绍）​    为方便将来讨论机器学习的方便，我们这里定义：$x^{(i)}$为输入变量，也成为输入的特征变量，以后将更多的应用术语Features（特征）来描述。$y^{(i)}$表示第i个输出或试图预测的目标变量。$(x^{(i)},y^{(i)})$为一对训练集，这里的i=1……m。 ​    为了更清晰与正式的描述有监督学习问题，我们目的是给定一个">
+<meta name="keywords" content="机器学习,Ng笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ng-02单向量下的线性回归">
+<meta property="og:url" content="http://yoursite.com/2017/06/06/Ng02/index.html">
 <meta property="og:site_name" content="丁小鲁的博客">
-<meta property="og:description" content="SEU-17级IC硕士生">
+<meta property="og:description" content="单变量下的线性回归系统1. 模型建立（术语介绍）​    为方便将来讨论机器学习的方便，我们这里定义：$x^{(i)}$为输入变量，也成为输入的特征变量，以后将更多的应用术语Features（特征）来描述。$y^{(i)}$表示第i个输出或试图预测的目标变量。$(x^{(i)},y^{(i)})$为一对训练集，这里的i=1……m。 ​    为了更清晰与正式的描述有监督学习问题，我们目的是给定一个">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgbcv78ajxj2079078t8r.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgbcv789ihj20ba01rt8k.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgbcv7lf0mj20bl065t97.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgbcwbb9q6j20bp06wjrr.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgbcwbgjy8j208l07vt90.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgbdwddpe7j20if09utak.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgbdwe84imj20hx09ytag.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgbdwee00tj20hp0870ub.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgben6qn4fj20fg07yn0j.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgben70gwlj205c01c3ya.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgben7edgbj20hq04274y.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgbsmpungsj20h20a6gm9.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgbsmq8ghrj20ia09t0tl.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgbsmqrarij209p06rq2w.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgbsmr355qj208i06st91.jpg">
+<meta property="og:updated_time" content="2017-08-20T14:28:10.711Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="丁小鲁的博客">
-<meta name="twitter:description" content="SEU-17级IC硕士生">
+<meta name="twitter:title" content="Ng-02单向量下的线性回归">
+<meta name="twitter:description" content="单变量下的线性回归系统1. 模型建立（术语介绍）​    为方便将来讨论机器学习的方便，我们这里定义：$x^{(i)}$为输入变量，也成为输入的特征变量，以后将更多的应用术语Features（特征）来描述。$y^{(i)}$表示第i个输出或试图预测的目标变量。$(x^{(i)},y^{(i)})$为一对训练集，这里的i=1……m。 ​    为了更清晰与正式的描述有监督学习问题，我们目的是给定一个">
+<meta name="twitter:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgbcv78ajxj2079078t8r.jpg">
   
     <link rel="alternative" href="/atom.xml" title="丁小鲁的博客" type="application/atom+xml">
   
@@ -151,60 +169,231 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Ng02" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/20/Learn-git-GitHub/" class="archive-article-date">
-  	<time datetime="2017-08-20T09:59:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/20/Learn-git-GitHub/">Learn git&amp;GitHub</a>
+    <h1 class="article-title" itemprop="name">
+      Ng-02单向量下的线性回归
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/06/06/Ng02/" class="archive-article-date">
+  	<time datetime="2017-06-06T15:22:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="单变量下的线性回归系统"><a href="#单变量下的线性回归系统" class="headerlink" title="单变量下的线性回归系统"></a>单变量下的线性回归系统</h1><h3 id="1-模型建立（术语介绍）"><a href="#1-模型建立（术语介绍）" class="headerlink" title="1. 模型建立（术语介绍）"></a>1. 模型建立（术语介绍）</h3><p>​    为方便将来讨论机器学习的方便，我们这里定义：$x^{(i)}$为输入变量，也成为输入的特征变量，以后将更多的应用术语Features（特征）来描述。$y^{(i)}$表示第i个输出或试图预测的目标变量。$(x^{(i)},y^{(i)})$为一对训练集，这里的i=1……m。</p>
+<p>​    为了更清晰与正式的描述有监督学习问题，我们目的是给定一个训练集，去学习一个函数h：X-&gt;Y。因此h(x)是对于y值得有效预测，一般地，该函数也成为假设函数（Hypothetical function）。如下图所示：</p>
+<a id="more"></a>
+<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgbcv78ajxj2079078t8r.jpg" alt="process of supervised learning"><br><br></div>
+
+<p>​    当试图预测的目标变量如房价预测的例子中一样为连续时，我们称这问题为回归问题。</p>
+<p>​    当输出y可以用几个小的离散值进行描述时（如给定居住地的面积，我们来预测该区域为公寓还是别墅），我们称该问题为分类问题。</p>
+<h3 id="2-代价函数（Cost-Function）"><a href="#2-代价函数（Cost-Function）" class="headerlink" title="2. 代价函数（Cost Function）"></a>2. 代价函数（Cost Function）</h3><p>​    对于假设函数的精确度测量可以利用代价函数，代价函数是对所有结果输入x的假设值与实际输出y之间平均化差异（事实上就是平均化的概念）。</p>
+<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgbcv789ihj20ba01rt8k.jpg" alt="cost fun"><br><br></div>
+
+<p>​    该函数又称为平方误差函数或方均根误差，其中在取平均后乘以（$\frac{1}{2}$）的目的是便于接下来的梯度运算，在接下来的梯度运算中求偏导数可以消除（$\frac{1}{2}$）。</p>
+<h3 id="3直观感受-代价函数"><a href="#3直观感受-代价函数" class="headerlink" title="3直观感受-代价函数"></a>3直观感受-代价函数</h3><p>​    我们利用x-y轴坐标进一步用图形描述它，这里我们尽力用一条直线通过这些已有的数据点($x^{(i)},y^{(i)}$)。如下图所示：</p>
+<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgbcv7lf0mj20bl065t97.jpg" alt="intution1"><br><br></div>
+
+<p>​    我们的目标是<strong>找到一条最有可能的直线，这条直线和所有的数据集构成的点最近</strong>。理想情况下，此条线通过所有的点集，这时关于参数$\theta<em>{0},\theta</em>{1}$代价函数$J(\theta<em>{0},\theta</em>{1})$最小为0。上图反应该理想情况：</p>
+<p>​    进一步的，当把$\theta_{1}=0.5$ ，我们可以看到哦每个点与线的距离增大，有下图：</p>
+<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgbcwbb9q6j20bp06wjrr.jpg" alt="increase theta"><br><br></div>
+
+<p>​    将不同的theta取值下所计算出的代价函数用plot绘出：</p>
+<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgbcwbgjy8j208l07vt90.jpg" alt="plot"><br><br></div>
+
+<p>​    从上图我们可以看出，以代价函数的最小值为目的时，$\theta_{1}=1$ 下我们得到全局最小值0。</p>
+<p>​    将参数从$\theta_{1}$ 提升到theta0和theta1，这时关于参数theta的代价函数描绘需要用到contour（等高线）。contour包含很多线，同一根线在x-y轴上取截然不同的两个点时，表示的值是相同的。</p>
+<p>​    取$\theta<em>{0}=800，\theta</em>{1}=0.5$ 此时假设函数如下：</p>
+<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgbdwddpe7j20if09utak.jpg" alt="contour plot1"><br><br></div>
+
+<p>​    取$\theta<em>{0}=360，\theta</em>{1}=0$ 此时假设函数如下：</p>
+<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgbdwe84imj20hx09ytag.jpg" alt="contour plot2"><br><br></div>
+
+<p>​    取$\theta<em>{0}=250，\theta</em>{1}=0.12$ 此时假设函数如下：</p>
+<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgbdwee00tj20hp0870ub.jpg" alt="contour plot3"><br><br></div>
+
+<h3 id="4-梯度下降法（Gradient-Decent）"><a href="#4-梯度下降法（Gradient-Decent）" class="headerlink" title="4. 梯度下降法（Gradient Decent）"></a>4. 梯度下降法（Gradient Decent）</h3><p>​    现在我们有了假设函数及如何度量函数对数据的拟合程度。如何调整假设函数中的参数theta呢?这里引入梯度下降算法。</p>
+<p>​    想象一下，我们依据theta0和theta1取值画出假设函数的取值。</p>
+<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgben6qn4fj20fg07yn0j.jpg" alt="contour picture"><br><br></div>
+
+<p>​    图中的红色箭头表明了图像中的最小值，当代价函数到图像中的最底部时，我们知道此时的参数选取是成功的。而找寻最底部的方法是通过对我们的代价函数取微分，图中的黑色点处给出了下一步的“移动”方向，我们沿着这个方向向下寻找梯度最小值。而点与点间的步长取决于参数$\alpha$ 的选取，这里被称为<strong>学习速率</strong>。</p>
+<p>​    梯度下降算法如下：<img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgben70gwlj205c01c3ya.jpg" alt="grad algorithm"></p>
+<p>​    重复此算法直至数据聚集（最底部），这里j=0，1代表特征指标数。</p>
+<p><strong>注意:</strong></p>
+<p>​    利用梯度下降法更新参数theta时，一定要保持<strong>同步更新</strong>（simultaneous update）</p>
+<p><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgben7edgbj20hq04274y.jpg" alt="同步更新"></p>
+<h3 id="5-直观感受–梯度下降法"><a href="#5-直观感受–梯度下降法" class="headerlink" title="5. 直观感受–梯度下降法"></a>5. 直观感受–梯度下降法</h3><p>​    梯度下降的公式为：$\theta<em>{1} := \theta</em>{1}-\alpha\frac{\mathrm{d} }{\mathrm{d} \theta<em>{1}}J(\theta</em>{1})$ </p>
+<ul>
+<li><p>讨论关于theta1导数&gt;0，theta1导数&lt;0两种情况：</p>
+<div align="center"><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgbsmpungsj20h20a6gm9.jpg" alt="about the value of Theta"><br><br></div>
+</li>
+<li><p>讨论关于学习速率$\alpha$ 的两种情况：</p>
+<div align="center"><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgbsmq8ghrj20ia09t0tl.jpg" alt="about alpha"><br><br></div>
+
+<p>图中分别表示了$\alpha$ 取值较小和取值较大两种情况下的代价函数取值。</p>
+</li>
+</ul>
+<p>​       这里需要说明：选取合适的学习速率即$\alpha$后，梯度递减算法会聚集到局部最小处，随着逐渐接近局部最小的过程中，下降步伐也会自动减小，因此不需要总是人为减小学习速率即$\alpha$。</p>
+<div align="center"><br><br><img src="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgbsmqrarij209p06rq2w.jpg" alt="auto decrease"><br><br></div>
+
+<h3 id="6-实例-线性回归下的梯度下降运算"><a href="#6-实例-线性回归下的梯度下降运算" class="headerlink" title="6. 实例-线性回归下的梯度下降运算"></a>6. 实例-线性回归下的梯度下降运算</h3><pre><code>在具体的线性回归问题下，梯度下降公式可以得到进一步演化（重复执行直到数据聚集）：
+</code></pre><p>$\theta<em>{0} := \theta</em>{0}-\alpha \frac{\mathrm{d} }{\mathrm{d} \theta<em>{0}}J(\theta</em>{0})$; —&gt;$\theta<em>{0} := \theta</em>{0}-\alpha\frac{1}{m}\sum<em>{i=1}^{m}(h</em>\theta(x_i)-y_i)$;</p>
+<p>$\theta<em>{1} := \theta</em>{1}-\alpha \frac{\mathrm{d} }{\mathrm{d} \theta<em>{1}}J(\theta</em>{1})$  —&gt;$\theta<em>{1} := \theta</em>{1}-\alpha\frac{1}{m}\sum<em>{i=1}^{m}((h</em>\theta(x_i)-y_i)x_i)$</p>
+<p>​    m表示训练集的个数，$\theta_0$为常数其保持与参数$\theta_1$同时更新，$(x_i,y_i)$表示训练集的某一个数据。其中，如果我们从猜测假设函数开始，然后不断重复地这些梯度等式，我们的假设就会越来越好，因此，这里需要指明一点（因为，在之后的学习中这里需要注意），通过随机设置或设置假设函数参数为零，对于多次重复性的计算最后结果并没有明显影响。</p>
+<p>​    因此，对于初始的代价函数J，有一个简单的梯度下降算法。这种方式看起来像是在整个训练集中重复同一步骤，这亦被称为：批量梯度下降。</p>
+<p>​    注意一点：总体上来看，尽管梯度下降会在一个局部的最小值处汇聚，但是我们这里提到的线性回归优化问题仅有一个全局的最小处。因此在保证学习速率为合适值下，梯度下降值会汇聚在全局最小处。从下面椭圆等高图中可以看出，起始为（48，30），逐渐地曲线收敛在全局最小处。</p>
+<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgbsmr355qj208i06st91.jpg" alt="grad min"><br><br></div>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/06/Ng02/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/06/07/Ng03/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Ng-03多元线性回归
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/06/06/Ng01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ng-01机器学习简介</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#单变量下的线性回归系统"><span class="toc-number">1.</span> <span class="toc-text">单变量下的线性回归系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-模型建立（术语介绍）"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 模型建立（术语介绍）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-代价函数（Cost-Function）"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 代价函数（Cost Function）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3直观感受-代价函数"><span class="toc-number">1.0.3.</span> <span class="toc-text">3直观感受-代价函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-梯度下降法（Gradient-Decent）"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 梯度下降法（Gradient Decent）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-直观感受–梯度下降法"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 直观感受–梯度下降法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-实例-线性回归下的梯度下降运算"><span class="toc-number">1.0.6.</span> <span class="toc-text">6. 实例-线性回归下的梯度下降运算</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -227,9 +416,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
