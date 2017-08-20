@@ -260,13 +260,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><em>本文参考书籍<a href="https://book.douban.com/subject/26462816/" target="_blank" rel="external">GitHub入门与实践</a>整理所得，另外可以查阅Git Community Book中文版本以及外文版本<a href="http://gitbook.liuhui998.com/index.html" target="_blank" rel="external">资料链接</a></em></p>
-<h1 id="Git与GitHub"><a href="#Git与GitHub" class="headerlink" title="Git与GitHub"></a>Git与GitHub</h1><h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><blockquote>
+<h1 id="git与github">Git与GitHub</h1>
+<h3 id="前言">1. 前言</h3>
+<blockquote>
 <p>GitHub：为开发者提供Git仓库的托管服务</p>
 <p>在Git中,开发者将源代码存入名为“Git仓库”的资料库中并加以使用，而GitHub则是在网络上提供Git仓库的一项服务。也就是说，GitHub上公开的软件源代码全部都由Git进行管理。</p>
 </blockquote>
-<p>​    <strong>Pull Request</strong>指开发者在本地对源代码进行更改后，向GitHub中托管的Git仓库请求合并的功能。</p>
+<p>​ <strong>Pull Request</strong>指开发者在本地对源代码进行更改后，向GitHub中托管的Git仓库请求合并的功能。</p>
 <hr>
-<p>​    版本管理在开发一款软件中占据着非常重要的低位，其必不可少的原因在于：可以记录一款软件添加或更改源代码的过程，回滚到特定的阶段，恢复误删除的文件等等…</p>
+<p>​ 版本管理在开发一款软件中占据着非常重要的低位，其必不可少的原因在于：可以记录一款软件添加或更改源代码的过程，回滚到特定的阶段，恢复误删除的文件等等…</p>
         
           <a class="article-more-a" href="/2017/08/20/Learn-git-GitHub/#more">more >></a>
         
@@ -424,8 +426,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="正则化（Regularization）"><a href="#正则化（Regularization）" class="headerlink" title="正则化（Regularization）"></a>正则化（Regularization）</h1><h3 id="1-过度拟合"><a href="#1-过度拟合" class="headerlink" title="1. 过度拟合"></a>1. 过度拟合</h3><p>​    考虑从x∈R预测y的问题，下面的最左边的图显示了将$y=\theta_0+\theta_1x$拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。</p>
-<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx33ubrj20fg04rt8q.jpg" alt="picture of problems"><br><br></div>
+        <h1 id="正则化regularization">正则化（Regularization）</h1>
+<h3 id="过度拟合">1. 过度拟合</h3>
+<p>​ 考虑从x∈R预测y的问题，下面的最左边的图显示了将<span class="math inline">\(y=\theta_0+\theta_1x\)</span>拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx33ubrj20fg04rt8q.jpg" alt="picture of problems">
+<p class="caption">picture of problems</p>
+</div>
+</div>
         
           <a class="article-more-a" href="/2017/06/10/Ng06/#more">more >></a>
         
@@ -505,8 +514,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="逻辑回归（Logistic-Regression）"><a href="#逻辑回归（Logistic-Regression）" class="headerlink" title="逻辑回归（Logistic Regression）"></a>逻辑回归（Logistic Regression）</h1><p>​    为了尝试分类，最简单的是使用线性回归，即将大于0.5的所有预测映射为1，全部小于0.5的映射为0.然而由于分类问题并不是简单的线性函数，因此该分类实际上并不能很好进行。</p>
-<p>​    其实分类问题与回归问题很相似，除了我们预测的y取值仅是一些较少的离散值。现在，我们重点介绍二进制分类问题，其中y只能选取两个值0或1。比如我们试图建立一个垃圾邮件分类机制，那么输入的x(i)可能是一封邮件的很多特征，输出值可能是0或1，即是或否。因此y∈{0,1}。0也称为负类（negative），1称为正类（positive）有时也用符号“ - ”和“+”表示。</p>
+        <h1 id="逻辑回归logistic-regression">逻辑回归（Logistic Regression）</h1>
+<p>​ 为了尝试分类，最简单的是使用线性回归，即将大于0.5的所有预测映射为1，全部小于0.5的映射为0.然而由于分类问题并不是简单的线性函数，因此该分类实际上并不能很好进行。</p>
+<p>​ 其实分类问题与回归问题很相似，除了我们预测的y取值仅是一些较少的离散值。现在，我们重点介绍二进制分类问题，其中y只能选取两个值0或1。比如我们试图建立一个垃圾邮件分类机制，那么输入的x(i)可能是一封邮件的很多特征，输出值可能是0或1，即是或否。因此y∈{0,1}。0也称为负类（negative），1称为正类（positive）有时也用符号“ - ”和“+”表示。</p>
         
           <a class="article-more-a" href="/2017/06/10/Ng05/#more">more >></a>
         
@@ -586,7 +596,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="EX1：machine-learning"><a href="#EX1：machine-learning" class="headerlink" title="EX1：machine learning"></a>EX1：machine learning</h1><h3 id="1-单变量下的线性回归"><a href="#1-单变量下的线性回归" class="headerlink" title="1. 单变量下的线性回归"></a>1. 单变量下的线性回归</h3><p>​    假如你是一家餐饮业老总，你想在不同的城市开设餐馆，从以往的餐馆中，你获取了相应的餐馆在每个城市的利润和人口数据。因此，你需要借助这些数据帮助你来决定下一步在何地开设。</p>
+        <h1 id="ex1machine-learning">EX1：machine learning</h1>
+<h3 id="单变量下的线性回归">1. 单变量下的线性回归</h3>
+<p>​ 假如你是一家餐饮业老总，你想在不同的城市开设餐馆，从以往的餐馆中，你获取了相应的餐馆在每个城市的利润和人口数据。因此，你需要借助这些数据帮助你来决定下一步在何地开设。</p>
         
           <a class="article-more-a" href="/2017/06/08/Ng04/#more">more >></a>
         
@@ -666,10 +678,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h1><h3 id="1-多重特征"><a href="#1-多重特征" class="headerlink" title="1. 多重特征"></a>1. 多重特征</h3><p>​    多个特征下的线性回归问题又称为：<strong>多元线性回归</strong>。这里有几个专用名词需要解释一下：</p>
+        <h1 id="多元线性回归">多元线性回归</h1>
+<h3 id="多重特征">1. 多重特征</h3>
+<p>​ 多个特征下的线性回归问题又称为：<strong>多元线性回归</strong>。这里有几个专用名词需要解释一下：</p>
 <ul>
-<li>$x_{j}^{i}$表示第i个训练样本中的第j歌特征值</li>
-<li>$x^i$表示第i个训练样本的所有特征，一般是以列向量来表示。</li>
+<li><span class="math inline">\(x_{j}^{i}\)</span>表示第i个训练样本中的第j歌特征值</li>
+<li><span class="math inline">\(x^i\)</span>表示第i个训练样本的所有特征，一般是以列向量来表示。</li>
 <li>m表示的是训练集的个数</li>
 </ul>
 <p>​
@@ -752,8 +766,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="单变量下的线性回归系统"><a href="#单变量下的线性回归系统" class="headerlink" title="单变量下的线性回归系统"></a>单变量下的线性回归系统</h1><h3 id="1-模型建立（术语介绍）"><a href="#1-模型建立（术语介绍）" class="headerlink" title="1. 模型建立（术语介绍）"></a>1. 模型建立（术语介绍）</h3><p>​    为方便将来讨论机器学习的方便，我们这里定义：$x^{(i)}$为输入变量，也成为输入的特征变量，以后将更多的应用术语Features（特征）来描述。$y^{(i)}$表示第i个输出或试图预测的目标变量。$(x^{(i)},y^{(i)})$为一对训练集，这里的i=1……m。</p>
-<p>​    为了更清晰与正式的描述有监督学习问题，我们目的是给定一个训练集，去学习一个函数h：X-&gt;Y。因此h(x)是对于y值得有效预测，一般地，该函数也成为假设函数（Hypothetical function）。如下图所示：</p>
+        <h1 id="单变量下的线性回归系统">单变量下的线性回归系统</h1>
+<h3 id="模型建立术语介绍">1. 模型建立（术语介绍）</h3>
+<p>​ 为方便将来讨论机器学习的方便，我们这里定义：<span class="math inline">\(x^{(i)}\)</span>为输入变量，也成为输入的特征变量，以后将更多的应用术语Features（特征）来描述。<span class="math inline">\(y^{(i)}\)</span>表示第i个输出或试图预测的目标变量。<span class="math inline">\((x^{(i)},y^{(i)})\)</span>为一对训练集，这里的i=1……m。</p>
+<p>​ 为了更清晰与正式的描述有监督学习问题，我们目的是给定一个训练集，去学习一个函数h：X-&gt;Y。因此h(x)是对于y值得有效预测，一般地，该函数也成为假设函数（Hypothetical function）。如下图所示：</p>
         
           <a class="article-more-a" href="/2017/06/06/Ng02/#more">more >></a>
         
@@ -927,15 +943,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SFrame</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

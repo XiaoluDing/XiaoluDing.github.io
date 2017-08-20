@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Ng-06正则化 | 丁小鲁的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="正则化（Regularization）1. 过度拟合​    考虑从x∈R预测y的问题，下面的最左边的图显示了将$y=\theta_0+\theta_1x$拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。">
+  <meta name="description" content="正则化（Regularization） 1. 过度拟合 ​ 考虑从x∈R预测y的问题，下面的最左边的图显示了将\(y=\theta_0+\theta_1x\)拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。    picture of problems">
 <meta name="keywords" content="机器学习,Ng笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ng-06正则化">
 <meta property="og:url" content="http://yoursite.com/2017/06/10/Ng06/index.html">
 <meta property="og:site_name" content="丁小鲁的博客">
-<meta property="og:description" content="正则化（Regularization）1. 过度拟合​    考虑从x∈R预测y的问题，下面的最左边的图显示了将$y=\theta_0+\theta_1x$拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。">
+<meta property="og:description" content="正则化（Regularization） 1. 过度拟合 ​ 考虑从x∈R预测y的问题，下面的最左边的图显示了将\(y=\theta_0+\theta_1x\)拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。    picture of problems">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx33ubrj20fg04rt8q.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx3feq0j20bq01vwec.jpg">
@@ -30,7 +30,7 @@
 <meta property="og:updated_time" content="2017-08-20T15:47:33.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ng-06正则化">
-<meta name="twitter:description" content="正则化（Regularization）1. 过度拟合​    考虑从x∈R预测y的问题，下面的最左边的图显示了将$y=\theta_0+\theta_1x$拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。">
+<meta name="twitter:description" content="正则化（Regularization） 1. 过度拟合 ​ 考虑从x∈R预测y的问题，下面的最左边的图显示了将\(y=\theta_0+\theta_1x\)拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。    picture of problems">
 <meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx33ubrj20fg04rt8q.jpg">
   
     <link rel="alternative" href="/atom.xml" title="丁小鲁的博客" type="application/atom+xml">
@@ -191,14 +191,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="正则化（Regularization）"><a href="#正则化（Regularization）" class="headerlink" title="正则化（Regularization）"></a>正则化（Regularization）</h1><h3 id="1-过度拟合"><a href="#1-过度拟合" class="headerlink" title="1. 过度拟合"></a>1. 过度拟合</h3><p>​    考虑从x∈R预测y的问题，下面的最左边的图显示了将$y=\theta_0+\theta_1x$拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。</p>
-<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx33ubrj20fg04rt8q.jpg" alt="picture of problems"><br><br></div>
-
+        <h1 id="正则化regularization">正则化（Regularization）</h1>
+<h3 id="过度拟合">1. 过度拟合</h3>
+<p>​ 考虑从x∈R预测y的问题，下面的最左边的图显示了将<span class="math inline">\(y=\theta_0+\theta_1x\)</span>拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx33ubrj20fg04rt8q.jpg" alt="picture of problems">
+<p class="caption">picture of problems</p>
+</div>
+</div>
 <a id="more"></a>
-<p>​    相反，如果我们添加了一个额外的特征$x^2$，并且拟合$y=\theta_0+\theta_1x+\theta<em>2x^2$，那么我们获得一个稍微更好的拟合数据（见中图）。 哈哈，这时候是不是我们添加的功能越多越好呢？当然不是！当增加太多特征的时候，也会出现很多问题：最右边的图是拟合五阶多项式$y=\sum</em>{j=0}^{5}\theta_jx^j$的结果。图中我们可以看到即使拟合的曲线完美地通过了数据，但我们也不会指望这是对不同生活区（x）的房价（y）很好的预测结果，即当面对新的数据输入（x）时，输出结果（y）是不令人满意的。 </p>
-<p>​    没有正式定义这些术语是什么意思，我们会说左边的数字显示了一个不合适的实例，即拟合图形未能清晰捕捉数据集，而右边的数字就是过拟合的例子。</p>
-<p>​    <strong>欠拟合</strong>(underfitting)或称高偏差，主要由于存在较少的特征集或拟合出的功能函数过于简单导致，此时拟合出的图形对数据的实际趋势的反应能力很差。相反地，<strong>过拟合</strong>(overfitting)或称高方差是由适合可用数据的假设函数引起的，但不能很好地推广到预测新数据。 它通常是由复杂的功能引起的，它产生了与数据无关的大量不必要的曲线和角度。</p>
-<p>​    过拟合与欠拟合这两个术语适用于线性和逻辑回归。 </p>
+<p>​ 相反，如果我们添加了一个额外的特征<span class="math inline">\(x^2\)</span>，并且拟合<span class="math inline">\(y=\theta_0+\theta_1x+\theta_2x^2\)</span>，那么我们获得一个稍微更好的拟合数据（见中图）。 哈哈，这时候是不是我们添加的功能越多越好呢？当然不是！当增加太多特征的时候，也会出现很多问题：最右边的图是拟合五阶多项式<span class="math inline">\(y=\sum_{j=0}^{5}\theta_jx^j\)</span>的结果。图中我们可以看到即使拟合的曲线完美地通过了数据，但我们也不会指望这是对不同生活区（x）的房价（y）很好的预测结果，即当面对新的数据输入（x）时，输出结果（y）是不令人满意的。</p>
+<p>​ 没有正式定义这些术语是什么意思，我们会说左边的数字显示了一个不合适的实例，即拟合图形未能清晰捕捉数据集，而右边的数字就是过拟合的例子。</p>
+<p>​ <strong>欠拟合</strong>(underfitting)或称高偏差，主要由于存在较少的特征集或拟合出的功能函数过于简单导致，此时拟合出的图形对数据的实际趋势的反应能力很差。相反地，<strong>过拟合</strong>(overfitting)或称高方差是由适合可用数据的假设函数引起的，但不能很好地推广到预测新数据。 它通常是由复杂的功能引起的，它产生了与数据无关的大量不必要的曲线和角度。</p>
+<p>​ 过拟合与欠拟合这两个术语适用于线性和逻辑回归。</p>
 <p>解决过拟合问题有两个主要选择：</p>
 <p>1）减少特征数量</p>
 <ul>
@@ -207,54 +213,94 @@
 </ul>
 <p>2）正则处理（Regularization）</p>
 <ul>
-<li>保持所有的特征，但是减小参数$\theta_j$的大小。</li>
+<li>保持所有的特征，但是减小参数<span class="math inline">\(\theta_j\)</span>的大小。</li>
 <li>当我们有很多有用的特征集时，正则化后的效果很好。</li>
 </ul>
-<h3 id="2-代价函数"><a href="#2-代价函数" class="headerlink" title="2. 代价函数"></a>2. 代价函数</h3><p>​    若我们从假设函数中出现过度拟合，我们可以通过增加代价（cost）来减少我们函数中的一些参数的权重。假设我们想使以下函数：$\theta_0+\theta_1x+\theta_2x^2+\theta_3x^3+\theta_4x^4$ 。</p>
-<p>​    我们试图消除（减弱）$\theta_3x^3$与$\theta_4x^4$的影响力。实际上并不用删除这些特征或改变我们假设的形式，我们可以这样改变我们的成本函数：</p>
-<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx3feq0j20bq01vwec.jpg" alt="increase the term"><br><br></div>
-
-<p>​    我们在末尾添加了两个额外项，以增加$\theta_3$和$\theta_4$的成本。 现在，为了使成本函数接近零，我们必须将$\theta_3$和$\theta_4$的值减小到接近零。 这将大大降低我们假设函数中$\theta_3x^3$和$\theta_4x^4$的值。 因此，我们看到新假设（由粉红色曲线描绘）看起来像一个二次函数，但是由于额外的小项$\theta_3x^3$和$\theta_4x^4$，更适合数据。</p>
-<div align="center"><br><br><img src="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgezx3jx25j20fk08paar.jpg" alt="decrease the cost"><br><br></div>
-
-<p>​    我们可以<strong>正则化</strong>（regularize）的方式削弱参数theta，总结如下：</p>
-<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgezx3st35j20bv01gmx0.jpg" alt="all theta under regularize"><br><br></div>
-
-<h3 id="3-正则下的线性回归"><a href="#3-正则下的线性回归" class="headerlink" title="3. 正则下的线性回归"></a>3. 正则下的线性回归</h3><ul>
-<li><p>梯度下降</p>
-<p>​我们不想消除（减弱）$\theta_0$的权重，因此需要先将$\theta_0$从所有的参数theta中剔除，同步不断递归：</p>
-</li>
-</ul>
-<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx4908uj20jo05074d.jpg" alt="regularization of grad"><br><br></div>
-
-<p>​    因式变换后有：</p>
-<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx4p9kaj20ah01a0sk.jpg" alt="new regularization"><br><br></div>
-
+<h3 id="代价函数">2. 代价函数</h3>
+<p>​ 若我们从假设函数中出现过度拟合，我们可以通过增加代价（cost）来减少我们函数中的一些参数的权重。假设我们想使以下函数：<span class="math inline">\(\theta_0+\theta_1x+\theta_2x^2+\theta_3x^3+\theta_4x^4\)</span> 。</p>
+<p>​ 我们试图消除（减弱）<span class="math inline">\(\theta_3x^3\)</span>与<span class="math inline">\(\theta_4x^4\)</span>的影响力。实际上并不用删除这些特征或改变我们假设的形式，我们可以这样改变我们的成本函数：</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx3feq0j20bq01vwec.jpg" alt="increase the term">
+<p class="caption">increase the term</p>
+</div>
+</div>
+<p>​ 我们在末尾添加了两个额外项，以增加<span class="math inline">\(\theta_3\)</span>和<span class="math inline">\(\theta_4\)</span>的成本。 现在，为了使成本函数接近零，我们必须将<span class="math inline">\(\theta_3\)</span>和<span class="math inline">\(\theta_4\)</span>的值减小到接近零。 这将大大降低我们假设函数中<span class="math inline">\(\theta_3x^3\)</span>和<span class="math inline">\(\theta_4x^4\)</span>的值。 因此，我们看到新假设（由粉红色曲线描绘）看起来像一个二次函数，但是由于额外的小项<span class="math inline">\(\theta_3x^3\)</span>和<span class="math inline">\(\theta_4x^4\)</span>，更适合数据。</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgezx3jx25j20fk08paar.jpg" alt="decrease the cost">
+<p class="caption">decrease the cost</p>
+</div>
+</div>
+<p>​ 我们可以<strong>正则化</strong>（regularize）的方式削弱参数theta，总结如下：</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgezx3st35j20bv01gmx0.jpg" alt="all theta under regularize">
+<p class="caption">all theta under regularize</p>
+</div>
+</div>
+<h3 id="正则下的线性回归">3. 正则下的线性回归</h3>
 <ul>
-<li><p>正则方程(Normal Equation)</p>
+<li>梯度下降</li>
+</ul>
+<p>​我们不想消除（减弱）<span class="math inline">\(\theta_0\)</span>的权重，因此需要先将<span class="math inline">\(\theta_0\)</span>从所有的参数theta中剔除，同步不断递归：</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx4908uj20jo05074d.jpg" alt="regularization of grad">
+<p class="caption">regularization of grad</p>
+</div>
+</div>
+<p>​ 因式变换后有：</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx4p9kaj20ah01a0sk.jpg" alt="new regularization">
+<p class="caption">new regularization</p>
+</div>
+</div>
+<ul>
+<li>正则方程(Normal Equation)</li>
+</ul>
 <p>​为了增加正则化，方程与我们的原始方法相同，只是我们在括号内添加另一个项：</p>
-</li>
-</ul>
-<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fi82x1ux1ij20ci03uwef.jpg" alt="NE regularization"><br><br></div>
-
-<p>​    L是一个矩阵，其左上角为0，对角线为1，其他地方为0。 应该有维数（n + 1）×（n + 1）。 直观地，这是单位矩阵（尽管我们不包括$x_0$），乘以单个实数λ。</p>
-<p>​    <strong>之前我们提到$X^TX$可能存在的不可逆情形，这里经过$X^TX+\lambda L$运算之后一定是可逆的！！</strong></p>
-<h3 id="4-正则下的逻辑回归"><a href="#4-正则下的逻辑回归" class="headerlink" title="4. 正则下的逻辑回归"></a>4. 正则下的逻辑回归</h3><p>​    我们将线性回归正则化，同时也可以类似的方式对逻辑回归进行正则化。这样可以避免过度拟合，下图显示了由粉色线显示的正则化函数比由蓝色线表示的非正则化函数更容易具有代表性：</p>
-<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgezx4ybxoj20dd077dgn.jpg" alt="logistic regression"><br><br></div>
-
+<div align="center">
+<div class="figure">
+<img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fi82x1ux1ij20ci03uwef.jpg" alt="NE regularization">
+<p class="caption">NE regularization</p>
+</div>
+</div>
+<p>​ L是一个矩阵，其左上角为0，对角线为1，其他地方为0。 应该有维数（n + 1）×（n + 1）。 直观地，这是单位矩阵（尽管我们不包括<span class="math inline">\(x_0\)</span>），乘以单个实数λ。</p>
+<p>​ <strong>之前我们提到<span class="math inline">\(X^TX\)</span>可能存在的不可逆情形，这里经过<span class="math inline">\(X^TX+\lambda L\)</span>运算之后一定是可逆的！！</strong></p>
+<h3 id="正则下的逻辑回归">4. 正则下的逻辑回归</h3>
+<p>​ 我们将线性回归正则化，同时也可以类似的方式对逻辑回归进行正则化。这样可以避免过度拟合，下图显示了由粉色线显示的正则化函数比由蓝色线表示的非正则化函数更容易具有代表性：</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgezx4ybxoj20dd077dgn.jpg" alt="logistic regression">
+<p class="caption">logistic regression</p>
+</div>
+</div>
 <ul>
-<li><p>代价函数</p>
-<p>​之前的计算公式为：</p>
-</li>
+<li>代价函数</li>
 </ul>
-<div align="center"><br><br><img src="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgezx57yvij20f301rmx1.jpg" alt="the org function"><br><br></div>
-
-<p>​    正则后的结果为（同样需要事先剔除第一个参数theta_0）：</p>
-<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx5o811j20lt01bglk.jpg" alt="the regular function"><br><br></div>
-
-<p>​    同时须保证梯度下降中德参数theta的同步更新：</p>
-<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx5zuuaj20do054gmh.jpg" alt="keep the theta update continuously"><br><br></div>
-
+<p>​之前的计算公式为：</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgezx57yvij20f301rmx1.jpg" alt="the org function">
+<p class="caption">the org function</p>
+</div>
+</div>
+<p>​ 正则后的结果为（同样需要事先剔除第一个参数theta_0）：</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx5o811j20lt01bglk.jpg" alt="the regular function">
+<p class="caption">the regular function</p>
+</div>
+</div>
+<p>​ 同时须保证梯度下降中德参数theta的同步更新：</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx5zuuaj20do054gmh.jpg" alt="keep the theta update continuously">
+<p class="caption">keep the theta update continuously</p>
+</div>
+</div>
 
       
 
@@ -380,7 +426,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正则化（Regularization）"><span class="toc-number">1.</span> <span class="toc-text">正则化（Regularization）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-过度拟合"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 过度拟合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-代价函数"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 代价函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-正则下的线性回归"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 正则下的线性回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-正则下的逻辑回归"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 正则下的逻辑回归</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正则化regularization"><span class="toc-number">1.</span> <span class="toc-text">正则化（Regularization）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#过度拟合"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 过度拟合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代价函数"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 代价函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则下的线性回归"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 正则下的线性回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则下的逻辑回归"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 正则下的逻辑回归</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -507,15 +553,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SFrame</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
