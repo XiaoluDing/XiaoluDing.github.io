@@ -6,25 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Ng-01机器学习简介 | 丁小鲁的博客</title>
+  <title>Ng-06正则化 | 丁小鲁的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="何为机器学习？​    对于机器学习（Machine Learning）的定义大体上有两种，第一种是美国人Arthur Samuel提出的，Arthur本人亦是人工智能（AI）的先驱。定义如下：机器学习是通过给予电脑在为做特定编写程序的前提下具备学习得能力。这种定义是较为古老、非正式的定义。现代机器学习教父Tom Mitchell先生对于机器学习给出了第二种较为现代的定义：通过从相关的任务T下的经">
+  <meta name="description" content="正则化（Regularization）1. 过度拟合​    考虑从x∈R预测y的问题，下面的最左边的图显示了将$y=\theta_0+\theta_1x$拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。">
 <meta name="keywords" content="机器学习,Ng笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ng-01机器学习简介">
-<meta property="og:url" content="http://yoursite.com/2017/06/06/Ng01/index.html">
+<meta property="og:title" content="Ng-06正则化">
+<meta property="og:url" content="http://yoursite.com/2017/06/10/Ng06/index.html">
 <meta property="og:site_name" content="丁小鲁的博客">
-<meta property="og:description" content="何为机器学习？​    对于机器学习（Machine Learning）的定义大体上有两种，第一种是美国人Arthur Samuel提出的，Arthur本人亦是人工智能（AI）的先驱。定义如下：机器学习是通过给予电脑在为做特定编写程序的前提下具备学习得能力。这种定义是较为古老、非正式的定义。现代机器学习教父Tom Mitchell先生对于机器学习给出了第二种较为现代的定义：通过从相关的任务T下的经">
+<meta property="og:description" content="正则化（Regularization）1. 过度拟合​    考虑从x∈R预测y的问题，下面的最左边的图显示了将$y=\theta_0+\theta_1x$拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgb8vl3wj6j20f60bj0st.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgb8vjvz70j20iv08hjrw.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgb8vkceo2j20is0akgm3.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgb8vkpmydj20f90bfaab.jpg">
-<meta property="og:updated_time" content="2017-08-20T14:26:37.320Z">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx33ubrj20fg04rt8q.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx3feq0j20bq01vwec.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgezx3jx25j20fk08paar.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgezx3st35j20bv01gmx0.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx4908uj20jo05074d.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx4p9kaj20ah01a0sk.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fi82x1ux1ij20ci03uwef.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgezx4ybxoj20dd077dgn.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgezx57yvij20f301rmx1.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx5o811j20lt01bglk.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx5zuuaj20do054gmh.jpg">
+<meta property="og:updated_time" content="2017-08-20T15:47:33.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ng-01机器学习简介">
-<meta name="twitter:description" content="何为机器学习？​    对于机器学习（Machine Learning）的定义大体上有两种，第一种是美国人Arthur Samuel提出的，Arthur本人亦是人工智能（AI）的先驱。定义如下：机器学习是通过给予电脑在为做特定编写程序的前提下具备学习得能力。这种定义是较为古老、非正式的定义。现代机器学习教父Tom Mitchell先生对于机器学习给出了第二种较为现代的定义：通过从相关的任务T下的经">
-<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgb8vl3wj6j20f60bj0st.jpg">
+<meta name="twitter:title" content="Ng-06正则化">
+<meta name="twitter:description" content="正则化（Regularization）1. 过度拟合​    考虑从x∈R预测y的问题，下面的最左边的图显示了将$y=\theta_0+\theta_1x$拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。">
+<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx33ubrj20fg04rt8q.jpg">
   
     <link rel="alternative" href="/atom.xml" title="丁小鲁的博客" type="application/atom+xml">
   
@@ -164,49 +171,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Ng01" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Ng06" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Ng-01机器学习简介
+      Ng-06正则化
     </h1>
   
 
         
-        <a href="/2017/06/06/Ng01/" class="archive-article-date">
-  	<time datetime="2017-06-06T14:22:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
+        <a href="/2017/06/10/Ng06/" class="archive-article-date">
+  	<time datetime="2017-06-10T07:53:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="何为机器学习？"><a href="#何为机器学习？" class="headerlink" title="何为机器学习？"></a>何为机器学习？</h1><p>​    对于机器学习（Machine Learning）的定义大体上有两种，第一种是美国人Arthur Samuel提出的，Arthur本人亦是人工智能（AI）的先驱。定义如下：机器学习是通过给予电脑在为做特定编写程序的前提下具备学习得能力。这种定义是较为古老、非正式的定义。现代机器学习教父Tom Mitchell先生对于机器学习给出了第二种较为现代的定义：通过从相关的任务T下的经验E中学习，其行为的表现用P来测量，计算机程序在不断的学习下，它对于任务T下的表现通过P测量，P随着经验E不断增长。</p>
+        <h1 id="正则化（Regularization）"><a href="#正则化（Regularization）" class="headerlink" title="正则化（Regularization）"></a>正则化（Regularization）</h1><h3 id="1-过度拟合"><a href="#1-过度拟合" class="headerlink" title="1. 过度拟合"></a>1. 过度拟合</h3><p>​    考虑从x∈R预测y的问题，下面的最左边的图显示了将$y=\theta_0+\theta_1x$拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。</p>
+<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx33ubrj20fg04rt8q.jpg" alt="picture of problems"><br><br></div>
+
 <a id="more"></a>
-<p>这里提出对于机器学习的一般分类：无监督下的学习和有监督下的学习。</p>
-<h3 id="1-有监督学习（supervised-learning）"><a href="#1-有监督学习（supervised-learning）" class="headerlink" title="1. 有监督学习（supervised learning）"></a>1. 有监督学习（supervised learning）</h3><p>​    在有监督的学习模型下，我们给定的数据集包含了已知正确的输出结果，在输入和输出之间关系。</p>
-<div align="center"><br><br><img src="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgb8vl3wj6j20f60bj0st.jpg" alt="Supervised Learning"><br><br></div>
-
-<p>​    一般有监督的学习问题可以划分为：回归（Regression）和分类（Classification）问题。在回归问题中，我们试图预测出连续输出的结果，意味着我们根据输入变量（关系）描绘出连续的函数。对于分类问题，我们试图根据离散结果预测结果。总而言之，我们尝试以离散的分类关系描绘输入变量。</p>
-<p><strong>例一</strong></p>
-<p>​    给出实际市场上房屋的尺寸数据集，试图预测这些房子的价格。价格作为尺寸的函数关系是连续的输出，因此，这是一个<strong>回归问题</strong>。</p>
-<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgb8vjvz70j20iv08hjrw.jpg" alt="House Price"><br><br></div>
-
-<p>​    我们也可以通过关心房价高于或低于给定要求价格以推测其售出价格，进而将这一问题转变为<strong>分类问题</strong>，这里我们依照价格将其分为两类。</p>
-<p><strong>例二</strong></p>
-<p>（1）回归问题：对给出的一个人的照片，我们以此照片为基础预测该人的年龄。</p>
-<p>（2）分类问题：已知意味病人体内后有肿瘤，我们试图预测该肿瘤是良性或恶性。</p>
-<p><img src="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgb8vkceo2j20is0akgm3.jpg" alt="肿瘤大小"></p>
-<h3 id="2-无监督学习（unsupervised-learning）"><a href="#2-无监督学习（unsupervised-learning）" class="headerlink" title="2. 无监督学习（unsupervised learning）"></a>2. 无监督学习（unsupervised learning）</h3><p>​    无监督学习下，我们在对应该的输出结果并不知道或知道很少下解决问题的方式。我们可以从并不必要知道变量作用下从数据中划分结构。总之，在无监督下，没有基于预测结果的反馈。</p>
-<p><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgb8vkpmydj20f90bfaab.jpg" alt="Unsupervised Learning"></p>
-<p><strong>例</strong></p>
+<p>​    相反，如果我们添加了一个额外的特征$x^2$，并且拟合$y=\theta_0+\theta_1x+\theta<em>2x^2$，那么我们获得一个稍微更好的拟合数据（见中图）。 哈哈，这时候是不是我们添加的功能越多越好呢？当然不是！当增加太多特征的时候，也会出现很多问题：最右边的图是拟合五阶多项式$y=\sum</em>{j=0}^{5}\theta_jx^j$的结果。图中我们可以看到即使拟合的曲线完美地通过了数据，但我们也不会指望这是对不同生活区（x）的房价（y）很好的预测结果，即当面对新的数据输入（x）时，输出结果（y）是不令人满意的。 </p>
+<p>​    没有正式定义这些术语是什么意思，我们会说左边的数字显示了一个不合适的实例，即拟合图形未能清晰捕捉数据集，而右边的数字就是过拟合的例子。</p>
+<p>​    <strong>欠拟合</strong>(underfitting)或称高偏差，主要由于存在较少的特征集或拟合出的功能函数过于简单导致，此时拟合出的图形对数据的实际趋势的反应能力很差。相反地，<strong>过拟合</strong>(overfitting)或称高方差是由适合可用数据的假设函数引起的，但不能很好地推广到预测新数据。 它通常是由复杂的功能引起的，它产生了与数据无关的大量不必要的曲线和角度。</p>
+<p>​    过拟合与欠拟合这两个术语适用于线性和逻辑回归。 </p>
+<p>解决过拟合问题有两个主要选择：</p>
+<p>1）减少特征数量</p>
 <ul>
-<li>簇：收集了100万的基因组，将这些基因组自动划分为多个小组，分类依据按照不同基因变量中相同的成分，如位置，角色，寿命等。</li>
-<li>非-簇：鸡尾酒舞会算法，使你在吵杂的环境下寻找结构（如：在鸡尾酒舞会中将个人的交谈声和音乐声做分离）。</li>
+<li>自己手动选择要保留的特征</li>
+<li>使用选择算法模型（在以后的课程中引出）</li>
 </ul>
+<p>2）正则处理（Regularization）</p>
+<ul>
+<li>保持所有的特征，但是减小参数$\theta_j$的大小。</li>
+<li>当我们有很多有用的特征集时，正则化后的效果很好。</li>
+</ul>
+<h3 id="2-代价函数"><a href="#2-代价函数" class="headerlink" title="2. 代价函数"></a>2. 代价函数</h3><p>​    若我们从假设函数中出现过度拟合，我们可以通过增加代价（cost）来减少我们函数中的一些参数的权重。假设我们想使以下函数：$\theta_0+\theta_1x+\theta_2x^2+\theta_3x^3+\theta_4x^4$ 。</p>
+<p>​    我们试图消除（减弱）$\theta_3x^3$与$\theta_4x^4$的影响力。实际上并不用删除这些特征或改变我们假设的形式，我们可以这样改变我们的成本函数：</p>
+<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx3feq0j20bq01vwec.jpg" alt="increase the term"><br><br></div>
+
+<p>​    我们在末尾添加了两个额外项，以增加$\theta_3$和$\theta_4$的成本。 现在，为了使成本函数接近零，我们必须将$\theta_3$和$\theta_4$的值减小到接近零。 这将大大降低我们假设函数中$\theta_3x^3$和$\theta_4x^4$的值。 因此，我们看到新假设（由粉红色曲线描绘）看起来像一个二次函数，但是由于额外的小项$\theta_3x^3$和$\theta_4x^4$，更适合数据。</p>
+<div align="center"><br><br><img src="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgezx3jx25j20fk08paar.jpg" alt="decrease the cost"><br><br></div>
+
+<p>​    我们可以<strong>正则化</strong>（regularize）的方式削弱参数theta，总结如下：</p>
+<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgezx3st35j20bv01gmx0.jpg" alt="all theta under regularize"><br><br></div>
+
+<h3 id="3-正则下的线性回归"><a href="#3-正则下的线性回归" class="headerlink" title="3. 正则下的线性回归"></a>3. 正则下的线性回归</h3><ul>
+<li><p>梯度下降</p>
+<p>​我们不想消除（减弱）$\theta_0$的权重，因此需要先将$\theta_0$从所有的参数theta中剔除，同步不断递归：</p>
+</li>
+</ul>
+<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx4908uj20jo05074d.jpg" alt="regularization of grad"><br><br></div>
+
+<p>​    因式变换后有：</p>
+<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx4p9kaj20ah01a0sk.jpg" alt="new regularization"><br><br></div>
+
+<ul>
+<li><p>正则方程(Normal Equation)</p>
+<p>​为了增加正则化，方程与我们的原始方法相同，只是我们在括号内添加另一个项：</p>
+</li>
+</ul>
+<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fi82x1ux1ij20ci03uwef.jpg" alt="NE regularization"><br><br></div>
+
+<p>​    L是一个矩阵，其左上角为0，对角线为1，其他地方为0。 应该有维数（n + 1）×（n + 1）。 直观地，这是单位矩阵（尽管我们不包括$x_0$），乘以单个实数λ。</p>
+<p>​    <strong>之前我们提到$X^TX$可能存在的不可逆情形，这里经过$X^TX+\lambda L$运算之后一定是可逆的！！</strong></p>
+<h3 id="4-正则下的逻辑回归"><a href="#4-正则下的逻辑回归" class="headerlink" title="4. 正则下的逻辑回归"></a>4. 正则下的逻辑回归</h3><p>​    我们将线性回归正则化，同时也可以类似的方式对逻辑回归进行正则化。这样可以避免过度拟合，下图显示了由粉色线显示的正则化函数比由蓝色线表示的非正则化函数更容易具有代表性：</p>
+<div align="center"><br><br><img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgezx4ybxoj20dd077dgn.jpg" alt="logistic regression"><br><br></div>
+
+<ul>
+<li><p>代价函数</p>
+<p>​之前的计算公式为：</p>
+</li>
+</ul>
+<div align="center"><br><br><img src="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fgezx57yvij20f301rmx1.jpg" alt="the org function"><br><br></div>
+
+<p>​    正则后的结果为（同样需要事先剔除第一个参数theta_0）：</p>
+<div align="center"><br><br><img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx5o811j20lt01bglk.jpg" alt="the regular function"><br><br></div>
+
+<p>​    同时须保证梯度下降中德参数theta的同步更新：</p>
+<div align="center"><br><br><img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgezx5zuuaj20do054gmh.jpg" alt="keep the theta update continuously"><br><br></div>
+
 
       
 
@@ -280,7 +328,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/06/Ng01/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/10/Ng06/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,15 +342,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/06/Ng02/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/08/01/Learning-the-SFrame/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Ng-02单向量下的线性回归
+          Learning the SFram - 源自某乎上的视频推荐
         
       </div>
     </a>
   
+  
+    <a href="/2017/06/10/Ng05/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ng-05逻辑回归</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -327,7 +380,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#何为机器学习？"><span class="toc-number">1.</span> <span class="toc-text">何为机器学习？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-有监督学习（supervised-learning）"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 有监督学习（supervised learning）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-无监督学习（unsupervised-learning）"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 无监督学习（unsupervised learning）</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正则化（Regularization）"><span class="toc-number">1.</span> <span class="toc-text">正则化（Regularization）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-过度拟合"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 过度拟合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-代价函数"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 代价函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-正则下的线性回归"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 正则下的线性回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-正则下的逻辑回归"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 正则下的逻辑回归</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
