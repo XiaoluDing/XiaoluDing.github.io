@@ -159,30 +159,32 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Ng01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Ng19" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/06/Ng01/">Ng-01机器学习简介</a>
+      <a class="article-title" href="/2017/07/19/Ng19/">Ng-19 练习EX7</a>
     </h1>
   
 
         
-        <a href="/2017/06/06/Ng01/" class="archive-article-date">
-  	<time datetime="2017-06-06T14:22:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
+        <a href="/2017/07/19/Ng19/" class="archive-article-date">
+  	<time datetime="2017-07-19T15:22:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="何为机器学习">何为机器学习？</h1>
-<p>​ 对于机器学习（Machine Learning）的定义大体上有两种，第一种是美国人Arthur Samuel提出的，Arthur本人亦是人工智能（AI）的先驱。定义如下：机器学习是通过给予电脑在为做特定编写程序的前提下具备学习得能力。这种定义是较为古老、非正式的定义。现代机器学习教父Tom Mitchell先生对于机器学习给出了第二种较为现代的定义：通过从相关的任务T下的经验E中学习，其行为的表现用P来测量，计算机程序在不断的学习下，它对于任务T下的表现通过P测量，P随着经验E不断增长。</p>
+        <h1 id="ex7k-均值聚类和pca">EX7：K-均值聚类和PCA</h1>
+<p>​ 前言：本练习中，我们将利用K-均值算法压缩一张图片，第二部分中，将使用PCA为面部图片找寻低维描述。</p>
+<h3 id="k-均值聚类">1、K-均值聚类</h3>
+<p>​ 在第一个练习中，主要实现K-means算法并将其用于图像压缩。 首先从2D数据集样本开始，目的了解K-means算法如何工作的直观性。 之后，将使用K-means算法进行图像压缩，将图像中发生的颜色数量减少为仅图像中最常见的颜色。</p>
         
-          <a class="article-more-a" href="/2017/06/06/Ng01/#more">more >></a>
+          <a class="article-more-a" href="/2017/07/19/Ng19/#more">more >></a>
         
       
 
@@ -210,7 +212,608 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/06/Ng01/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/07/19/Ng19/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ng18" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/17/Ng18/">Ng-18 维数约减与PCA</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/17/Ng18/" class="archive-article-date">
+  	<time datetime="2017-07-17T08:00:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="维数约减dimensionality-reduction">维数约减–Dimensionality Reduction</h1>
+<p>​ 维数约减属于无监督学习范畴，我们希望使用维数约减的原因可能有：通过数据压缩以减少数据占有内存的大小，为算法运算提高速度，将数据可视化等。</p>
+<h3 id="数据压缩-data-compression">1. 数据压缩-data compression</h3>
+<p>​ 某个物体的长度以x1厘米为单位，另一个x2是它以英寸为单位的长度。这是一个非常冗余的数据，所以与其用两个特征变量x1和x2，但它们都是测量到的长度，或许我们应该把这个数据降到一维，这样一来只用一个长度的数据。</p>
+<p>​ 从二维/2D降到一维/1D到底意味着什么？通过样本涂上不同的颜色，在这个例子中降低维度的意思指找到这样一条线，基本所有点都落在这个方向上然后把所有的数据映射到这条线上，这样做之后就可以直接测量这条线上每个样本的位置，现在把这个新特征叫做z1，要确定这条线上的位置只需要一个数字，这就是说新特征变量z1能够表示这条绿线上每一个点的位置。</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fhm4qk0l08j20ji0a53ze.jpg" alt="1.jpg">
+<p class="caption">1.jpg</p>
+</div>
+</div>
+        
+          <a class="article-more-a" href="/2017/07/17/Ng18/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/17/Ng18/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ng17" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/13/Ng17/">Ng-17 聚类学习</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/13/Ng17/" class="archive-article-date">
+  	<time datetime="2017-07-13T07:22:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="聚类clustering">聚类（Clustering）</h1>
+<h3 id="无监督学习unsupervised-learning">1. 无监督学习（unsupervised learning）</h3>
+<p>​ 回顾之前的有监督学习，根据给出的数据集（已经做出标记labels）<span class="math inline">\({(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),...,(x^{(m)},y^{(m)})}\)</span>，学习出假设函数，对数据集进行决策分界。</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fhh5c53wfpj209k07lt8r.jpg" alt="1.jpg">
+<p class="caption">1.jpg</p>
+</div>
+</div>
+        
+          <a class="article-more-a" href="/2017/07/13/Ng17/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/13/Ng17/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ng16" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/11/Ng16/">Ng-16 练习EX6</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/11/Ng16/" class="archive-article-date">
+  	<time datetime="2017-07-11T14:19:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ex6-支持向量机svm">Ex6 支持向量机SVM</h1>
+<p>​ 在本练习的上半部分，将使用支持向量机（SVM）与各种示例2维数据集。 实验这些数据集将有助于直观了解SVM工作的过程，以及如何使用高斯内核与SVM。 在下一个练习中，将使用支持向量机来构建垃圾邮件分类器。</p>
+<p>​ 如下图所示的2维数据集，可以通过线性边界分离，图中正样本通过“+”描述，负样本通过“o”描述，之间有很大的间隙（gap），但需注意在点（0.1，4.1）处有一个正样本点“+”。</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fhgawxp96gj20aj07rmx6.jpg" alt="1.jpg">
+<p class="caption">1.jpg</p>
+</div>
+</div>
+        
+          <a class="article-more-a" href="/2017/07/11/Ng16/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/11/Ng16/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ng15" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/11/Ng15/">Ng-15 支持向量机SVM</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/11/Ng15/" class="archive-article-date">
+  	<time datetime="2017-07-11T07:26:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="支持向量机support-vector-machine">支持向量机（Support Vector Machine）</h1>
+<p>​ 支持向量机（SVM）为监督式机器学习方法的一种，广泛地应用于统计分类、回归分析、二类问题（binary classification）的模式识别中，其最大特点是既能够最小化经验损失（也叫做经验风险、或者经验误差），同时又能够最大化几何间距（分类器的置信度），因此SVM又被称为最大边缘区（间距）的分类器。</p>
+<p>​ 机的意思就是算法，机器学习领域里面常常用“机”这个字表示算法。<strong>支持向量</strong>意思就是数据集种的某些点，位置比较特殊，我们找这条直线的时候，一般就看聚集在一起的两类数据，它们各自的最边缘位置的点，也就是最靠近划分直线的那几个点，而其他点对这条直线的最终位置的确定起不了作用，故称这些点为“支持点”（即有用的点），但是在数学上，没这种说法，数学里的点，又可以叫向量，比如二维点（x,y）就是二维向量，三维度的就是三维向量（x,y,z)。所以“支持点”改叫“支持向量”。</p>
+        
+          <a class="article-more-a" href="/2017/07/11/Ng15/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/11/Ng15/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ng14" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/Ng14/">Ng-14 第一个实例设计</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/08/Ng14/" class="archive-article-date">
+  	<time datetime="2017-07-08T03:22:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设计实例构建一个垃圾邮件分类器">设计实例：构建一个垃圾邮件分类器</h1>
+<p>​ 对于垃圾邮件，我们可以人为的挑选若干个关键词作为识别垃圾邮件判断的特征，而在实际应用中，我们应该遍历整个训练集，在训练集中找出出现次数最多的n个单词，n介于10,000和50,000之间，将这些单词作为所选用的特征。根据所找到的特征集合，我们可以为每一个邮件构建一个向量，如果在电子邮件中找到一个字，我们将分配其相应的项1，否则这一项将为0，即向量的每一项表示一个单词。一旦我们准备好所有的x向量，我们就会训练我们的算法，最后， 我们可以使用它来分类邮件是否是垃圾邮件。</p>
+        
+          <a class="article-more-a" href="/2017/07/08/Ng14/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/08/Ng14/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ng13" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/07/Ng13/">Ng-13 练习EX5</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/07/Ng13/" class="archive-article-date">
+  	<time datetime="2017-07-07T07:53:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ex5-正则线性回归下的偏差v.s.方差问题">EX5 正则线性回归下的偏差v.s.方差问题</h1>
+<p>​ 在练习的前半段，你将利用正则化线性回归模型根据水库中水位变化来预测流出大坝的水量，之后的下半段练习中，将通过调试所学的算法的诊断效果，检查是偏差还是方差的影响。</p>
+<h3 id="数据的可视化">1. 数据的可视化</h3>
+<p>​ 首先对大坝保存的历史记录中德数据进行可视化，包括水位的变化x以及从坝流出的水量y，数据集主要分为以下三类：</p>
+<ul>
+<li>训练集：从中学习–建立模型 X，y</li>
+<li>交叉验证集：用于决定正则化的参数 Xval，yval</li>
+<li>测试集：用于检验模型的性能 Xtest，ytest</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/07/07/Ng13/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/07/Ng13/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ng12" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/06/Ng12/">Ng-12 ML实际应用时的几点建议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/06/Ng12/" class="archive-article-date">
+  	<time datetime="2017-07-06T15:25:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>白白的敲了两个晚上，没保存，重来。。</em></p>
+<h1 id="对于机器学习ml实际应用中的几点建议">对于机器学习ML实际应用中的几点建议</h1>
+<h3 id="下一步的选择">1. 下一步的选择</h3>
+<p>​ 假设你利用正则化后的线性回归来预测房价<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fh71nmm5t9j20ce02vwek.jpg" alt="0,jpg"></p>
+<p>​ 但利用训练出来的函数应用在新的房屋集中时，会发现对于预测出现了很大的误差，接下来可以选择：</p>
+        
+          <a class="article-more-a" href="/2017/07/06/Ng12/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/06/Ng12/">展开全文 >></a>
         </p>
       
 
@@ -242,7 +845,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -354,10 +957,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">SFrame</a>
               </li>
              
@@ -367,6 +966,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Ng笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
