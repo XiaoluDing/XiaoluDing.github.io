@@ -159,6 +159,259 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Ng14" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/Ng14/">Ng-14 第一个实例设计</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/08/Ng14/" class="archive-article-date">
+  	<time datetime="2017-07-08T03:22:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设计实例构建一个垃圾邮件分类器">设计实例：构建一个垃圾邮件分类器</h1>
+<p>​ 对于垃圾邮件，我们可以人为的挑选若干个关键词作为识别垃圾邮件判断的特征，而在实际应用中，我们应该遍历整个训练集，在训练集中找出出现次数最多的n个单词，n介于10,000和50,000之间，将这些单词作为所选用的特征。根据所找到的特征集合，我们可以为每一个邮件构建一个向量，如果在电子邮件中找到一个字，我们将分配其相应的项1，否则这一项将为0，即向量的每一项表示一个单词。一旦我们准备好所有的x向量，我们就会训练我们的算法，最后， 我们可以使用它来分类邮件是否是垃圾邮件。</p>
+        
+          <a class="article-more-a" href="/2017/07/08/Ng14/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/08/Ng14/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ng13" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/07/Ng13/">Ng-13 练习EX5</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/07/Ng13/" class="archive-article-date">
+  	<time datetime="2017-07-07T07:53:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ex5-正则线性回归下的偏差v.s.方差问题">EX5 正则线性回归下的偏差v.s.方差问题</h1>
+<p>​ 在练习的前半段，你将利用正则化线性回归模型根据水库中水位变化来预测流出大坝的水量，之后的下半段练习中，将通过调试所学的算法的诊断效果，检查是偏差还是方差的影响。</p>
+<h3 id="数据的可视化">1. 数据的可视化</h3>
+<p>​ 首先对大坝保存的历史记录中德数据进行可视化，包括水位的变化x以及从坝流出的水量y，数据集主要分为以下三类：</p>
+<ul>
+<li>训练集：从中学习–建立模型 X，y</li>
+<li>交叉验证集：用于决定正则化的参数 Xval，yval</li>
+<li>测试集：用于检验模型的性能 Xtest，ytest</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/07/07/Ng13/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/07/Ng13/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ng12" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/06/Ng12/">Ng-12 ML实际应用时的几点建议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/06/Ng12/" class="archive-article-date">
+  	<time datetime="2017-07-06T15:25:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>白白的敲了两个晚上，没保存，重来。。</em></p>
+<h1 id="对于机器学习ml实际应用中的几点建议">对于机器学习ML实际应用中的几点建议</h1>
+<h3 id="下一步的选择">1. 下一步的选择</h3>
+<p>​ 假设你利用正则化后的线性回归来预测房价<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fh71nmm5t9j20ce02vwek.jpg" alt="0,jpg"></p>
+<p>​ 但利用训练出来的函数应用在新的房屋集中时，会发现对于预测出现了很大的误差，接下来可以选择：</p>
+        
+          <a class="article-more-a" href="/2017/07/06/Ng12/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/06/Ng12/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Ng11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -579,258 +832,6 @@
 
 
   
-    <article id="post-Ng06" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/10/Ng06/">Ng-06正则化</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/10/Ng06/" class="archive-article-date">
-  	<time datetime="2017-06-10T07:53:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="正则化regularization">正则化（Regularization）</h1>
-<h3 id="过度拟合">1. 过度拟合</h3>
-<p>​ 考虑从x∈R预测y的问题，下面的最左边的图显示了将<span class="math inline">\(y=\theta_0+\theta_1x\)</span>拟合到数集的结果，我们看到数据不是真的在直线上，所以适合度不是很好。</p>
-<div align="center">
-<div class="figure">
-<img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgezx33ubrj20fg04rt8q.jpg" alt="picture of problems">
-<p class="caption">picture of problems</p>
-</div>
-</div>
-        
-          <a class="article-more-a" href="/2017/06/10/Ng06/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/10/Ng06/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Ng05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/10/Ng05/">Ng-05逻辑回归</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/10/Ng05/" class="archive-article-date">
-  	<time datetime="2017-06-10T04:29:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="逻辑回归logistic-regression">逻辑回归（Logistic Regression）</h1>
-<p>​ 为了尝试分类，最简单的是使用线性回归，即将大于0.5的所有预测映射为1，全部小于0.5的映射为0.然而由于分类问题并不是简单的线性函数，因此该分类实际上并不能很好进行。</p>
-<p>​ 其实分类问题与回归问题很相似，除了我们预测的y取值仅是一些较少的离散值。现在，我们重点介绍二进制分类问题，其中y只能选取两个值0或1。比如我们试图建立一个垃圾邮件分类机制，那么输入的x(i)可能是一封邮件的很多特征，输出值可能是0或1，即是或否。因此y∈{0,1}。0也称为负类（negative），1称为正类（positive）有时也用符号“ - ”和“+”表示。</p>
-        
-          <a class="article-more-a" href="/2017/06/10/Ng05/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/10/Ng05/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Ng04" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/08/Ng04/">Ng-04练习题EX1</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/08/Ng04/" class="archive-article-date">
-  	<time datetime="2017-06-08T10:10:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ex1machine-learning">EX1：machine learning</h1>
-<h3 id="单变量下的线性回归">1. 单变量下的线性回归</h3>
-<p>​ 假如你是一家餐饮业老总，你想在不同的城市开设餐馆，从以往的餐馆中，你获取了相应的餐馆在每个城市的利润和人口数据。因此，你需要借助这些数据帮助你来决定下一步在何地开设。</p>
-        
-          <a class="article-more-a" href="/2017/06/08/Ng04/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/08/Ng04/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -945,10 +946,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SFrame</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
@@ -957,11 +954,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SFrame</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">旅途</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>
