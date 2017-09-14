@@ -6,18 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 丁小鲁的博客</title>
+  <title>我能分辨手写字母！ | 丁小鲁的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SEU-17级IC硕士生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="丁小鲁的博客">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+  <meta name="description" content="主题：关于一些python实战上值得细究的一些算法（2）     skiing_with_me">
+<meta name="keywords" content="机器学习,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我能分辨手写字母！">
+<meta property="og:url" content="http://yoursite.com/2017/09/14/chp2学习 /index.html">
 <meta property="og:site_name" content="丁小鲁的博客">
-<meta property="og:description" content="SEU-17级IC硕士生">
+<meta property="og:description" content="主题：关于一些python实战上值得细究的一些算法（2）     skiing_with_me">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fjivkmd1dkj20g00a00uj.jpg">
+<meta property="og:image" content="https://sfault-image.b0.upaiyun.com/231/717/2317178891-5961fea05f0d4">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjivkiv7uoj20b206rn1f.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fjivknthesj20fo082aab.jpg">
+<meta property="og:updated_time" content="2017-09-14T02:21:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="丁小鲁的博客">
-<meta name="twitter:description" content="SEU-17级IC硕士生">
+<meta name="twitter:title" content="我能分辨手写字母！">
+<meta name="twitter:description" content="主题：关于一些python实战上值得细究的一些算法（2）     skiing_with_me">
+<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fjivkmd1dkj20g00a00uj.jpg">
   
     <link rel="alternative" href="/atom.xml" title="丁小鲁的博客" type="application/atom+xml">
   
@@ -157,36 +164,80 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-chp2学习 " class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      我能分辨手写字母！
+    </h1>
+  
+
+        
+        <a href="/2017/09/14/chp2学习 /" class="archive-article-date">
+  	<time datetime="2017-09-14T12:07:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-14</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p><strong>主题</strong>：关于一些python实战上值得细究的一些算法（2）</p>
+<hr>
+<div align="center">
+<div class="figure">
+<img src="http://wx2.sinaimg.cn/mw690/7b8d2108gy1fjivkmd1dkj20g00a00uj.jpg" alt="skiing_with_me">
+<p class="caption">skiing_with_me</p>
+</div>
+</div>
+<a id="more"></a>
+<h3 id="np.sumarrayaxis012..">2.1 <a href="https://segmentfault.com/q/1010000010111006" target="_blank" rel="external">np.sum(array,axis=0,1,2..)</a></h3>
+<p>关于numpy中出现的axis=0、1、2等的理解：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">c = np.array([[[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>,<span class="number">3</span>], </div><div class="line">               [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>,<span class="number">7</span>]],</div><div class="line">               [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,<span class="number">4</span>],</div><div class="line">                [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]]]</div><div class="line">                </div><div class="line"> print( c.sum(axis=<span class="number">0</span>))</div><div class="line"> print( c.sum(axis=<span class="number">1</span>)) </div><div class="line"> print( c.sum(axis=<span class="number">2</span>))</div></pre></td></tr></table></figure>
+<div align="center">
+<div class="figure">
+<img src="https://sfault-image.b0.upaiyun.com/231/717/2317178891-5961fea05f0d4" alt="result of the code">
+<p class="caption">result of the code</p>
+</div>
+</div>
+<p>首先可以把<code>c</code>可以看作一个2x2的矩阵，而矩阵的每个元素是一个长度为4的数组（例如[0, 1, 2, 3]设为a1)，即从宏观上来看有：[a1,a2 ]，[a3,a4 ]</p>
+<p>当参数<code>axis = 0</code>时，求矩阵<strong>每一列</strong>上元素的和。例如，对第一列上的两个数组[0, 1, 2, 3]和[1, 2, 3, 4]相加，返回一个新的数组[1, 3, 4, 7]，后面的列依次类推。因此最后得到一个新的数组，即:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.sum(c,axis = <span class="number">0</span>)</div><div class="line">array([[ <span class="number">1</span>,  <span class="number">3</span>,  <span class="number">5</span>,  <span class="number">7</span>],</div><div class="line">       [ <span class="number">9</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">15</span>]])</div></pre></td></tr></table></figure>
+<p><code>axis = 1</code>时，对矩阵<strong>每一行</strong> 上的元素进行求和，同上。</p>
+<p><code>axis = 2</code>时，对矩阵<strong>每个元素</strong>进行求和，即对你矩阵中每个列表内的元素求和，返回一个新的2x2矩阵。这听起来有些奇怪，但前提必须是一个三维数组，且<code>axis</code>的值必须小于数组的维度，否则会出现异常。</p>
+<p>此外，还能通过索引来得到<code>c</code>中的每个元素，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>c[<span class="number">0</span>] <span class="comment">#第一行</span></div><div class="line">array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line">       [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>c[<span class="number">0</span>,<span class="number">1</span>] <span class="comment">#第一行中的二个列表</span></div><div class="line">array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>c[<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>] <span class="comment">#第一行中的二个列表的第二个元素</span></div><div class="line"><span class="number">5</span></div></pre></td></tr></table></figure>
+<h3 id="数据收集">2.2 数据收集</h3>
+<p>手写图片尺寸为宽高32像素*32像素，为方便理解，需要将图像转为文本格式，在文件夹下有两个目录：trainingDigits、testDigits，各包含了2000和900个例子，任意打开三个出现下图形状：</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjivkiv7uoj20b206rn1f.jpg" alt="0-1-4">
+<p class="caption">0-1-4</p>
+</div>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 基于K-NN的手写识别算法实现</span></div><div class="line"><span class="comment"># 1.收集数据：提供给文本文件</span></div><div class="line"><span class="comment"># 2.准备数据：编写函数classify0（），将图像格式转换为分类器所需要的list</span></div><div class="line"><span class="comment"># 3.分析数据：检查数据格式</span></div><div class="line"><span class="comment"># 4.训练算法：该步骤不适合k-NN</span></div><div class="line"><span class="comment"># 5.测试算法：将数据分类：测试集与非测试集</span></div><div class="line"><span class="comment"># 6.使用算法：</span></div><div class="line"></div><div class="line"><span class="comment"># 收集数据: 定义函数img2vector()将图片形式转为数组向量</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">img2vector</span><span class="params">(filename)</span>:</span></div><div class="line">    returnVect = zeros((<span class="number">1</span>,<span class="number">1024</span>))</div><div class="line">    <span class="keyword">with</span> open(filename) <span class="keyword">as</span> fr:</div><div class="line">        lineStr = fr.readlines()</div><div class="line"></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(lineStr)):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">32</span>):</div><div class="line">            returnVect[<span class="number">0</span>,<span class="number">32</span>*i+j] = int(lineStr[i][j])</div><div class="line"></div><div class="line">    <span class="keyword">return</span> returnVect</div></pre></td></tr></table></figure>
+<h3 id="手写识别系统测试">2.3 手写识别系统测试</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 从os模块导入listdir函数：用于列出给定目录下的文件名</span></div><div class="line"><span class="comment"># 手写数字识别系统个的测试</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">handWritingClassTest</span><span class="params">()</span>:</span></div><div class="line">    hwLabels = []</div><div class="line">    <span class="comment"># 获取目录内容</span></div><div class="line">    trainingFileList = listdir(<span class="string">'trainingDigits'</span>)</div><div class="line">    m = len(trainingFileList)</div><div class="line">    trainingMat = zeros((m,<span class="number">1024</span>))</div><div class="line"></div><div class="line">    <span class="comment">#从文件名中解析分类数字</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</div><div class="line">        fileNameStr = trainingFileList[i]</div><div class="line">        fileStr = fileNameStr.split(<span class="string">'.'</span>)[<span class="number">0</span>]</div><div class="line">        classNumStr = int(fileStr.split(<span class="string">'_'</span>)[<span class="number">0</span>])</div><div class="line">        hwLabels.append(classNumStr)</div><div class="line">        trainingMat[i,:] = img2vector(<span class="string">'trainingDigits/%s'</span>%fileNameStr)</div><div class="line"></div><div class="line">    testFileList = listdir(<span class="string">'testDigits'</span>)</div><div class="line">    errorCount = <span class="number">0.0</span></div><div class="line">    mTest = len(testFileList)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(mTest):</div><div class="line">        fileNameStr = testFileList[i]</div><div class="line">        fileStr = fileNameStr.split(<span class="string">'.'</span>)[<span class="number">0</span>]</div><div class="line">        classNumStr = int(fileStr.split(<span class="string">'_'</span>)[<span class="number">0</span>])</div><div class="line">        vectorUnderTest = img2vector(<span class="string">'testDigits/%s'</span> % fileNameStr)</div><div class="line">        </div><div class="line">        classifierResult = classify0(vectorUnderTest,</div><div class="line">                                     trainingMat,hwLabels,<span class="number">3</span>)</div><div class="line">        print(<span class="string">"The classifier came back with: %d,the real answer is : %d"</span></div><div class="line">              %(classifierResult,classNumStr))</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(classifierResult != classNumStr):</div><div class="line">            errorCount += <span class="number">1.0</span></div><div class="line">    print(<span class="string">"\nthe total number of errors is: %d"</span>%errorCount)</div><div class="line">    print(<span class="string">"\nthe total error rate is: %f"</span>%(errorCount/float(mTest)))</div></pre></td></tr></table></figure>
+<p>实际使用过程中，代码的执行效率并不高，如前述，每个测试向量需要做2000次距离计算，且每个向量为1024维度的浮点数，总须执行900次，此外需要为测试向量准备2MB的存储空间，下一节中我们希望使用根据效率的改进型决策树。</p>
+<p>尽管算法效率较低，但900个测试结果，误差率如下：</p>
+<div align="center">
+<div class="figure">
+<img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fjivknthesj20fo082aab.jpg" alt="The result of code operation">
+<p class="caption">The result of code operation</p>
+</div>
+</div>
+<p>实际上，变量k的取值、函数handwritingClassTest随机选取样本的数目都会影响错误率。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/11/Ng15/" class="archive-article-date">
-  	<time datetime="2017-07-11T07:26:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/Ng15/">Ng-15 支持向量机SVM</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -196,322 +247,122 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/14/chp2学习 /" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/08/Ng14/" class="archive-article-date">
-  	<time datetime="2017-07-08T03:22:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/12/chp1学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">和我约会吧！</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/08/Ng14/">Ng-14 第一个实例设计</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#np.sumarrayaxis012.."><span class="toc-number">1.</span> <span class="toc-text">2.1 np.sum(array,axis=0,1,2..)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据收集"><span class="toc-number">2.</span> <span class="toc-text">2.2 数据收集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手写识别系统测试"><span class="toc-number">3.</span> <span class="toc-text">2.3 手写识别系统测试</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/07/Ng13/" class="archive-article-date">
-  	<time datetime="2017-07-07T07:53:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/07/Ng13/">Ng-13 练习EX5</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/06/Ng12/" class="archive-article-date">
-  	<time datetime="2017-07-06T15:25:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/06/Ng12/">Ng-12 ML实际应用时的几点建议</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/28/Ng11/" class="archive-article-date">
-  	<time datetime="2017-06-28T13:24:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/28/Ng11/">Ng-11练习EX4</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/19/Ng10/" class="archive-article-date">
-  	<time datetime="2017-06-19T11:12:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/19/Ng10/">Ng-10NN后向传播算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/12/Ng09/" class="archive-article-date">
-  	<time datetime="2017-06-12T08:21:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/12/Ng09/">Ng-09练习EX3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/11/Ng08/" class="archive-article-date">
-  	<time datetime="2017-06-11T04:53:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/11/Ng08/">Ng-08神经网络NN简述</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/4/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -535,8 +386,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
