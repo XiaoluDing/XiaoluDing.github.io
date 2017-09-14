@@ -6,26 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Ng-03多元线性回归 | 丁小鲁的博客</title>
+  <title>matplotlib.pyplot使用说明 | 丁小鲁的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="多元线性回归 1. 多重特征 ​ 多个特征下的线性回归问题又称为：多元线性回归。这里有几个专用名词需要解释一下：  \(x_{j}^{i}\)表示第i个训练样本中的第j歌特征值 \(x^i\)表示第i个训练样本的所有特征，一般是以列向量来表示。 m表示的是训练集的个数  ​">
-<meta name="keywords" content="机器学习,Ng笔记">
+  <meta name="description" content="主题：学习 scipy中出现的关于matplotlib下的pyplot理解问题     LOL">
+<meta name="keywords" content="机器学习,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ng-03多元线性回归">
-<meta property="og:url" content="http://yoursite.com/2017/06/07/Ng03/index.html">
+<meta property="og:title" content="matplotlib.pyplot使用说明">
+<meta property="og:url" content="http://yoursite.com/2017/09/14/chp3学习 /index.html">
 <meta property="og:site_name" content="丁小鲁的博客">
-<meta property="og:description" content="多元线性回归 1. 多重特征 ​ 多个特征下的线性回归问题又称为：多元线性回归。这里有几个专用名词需要解释一下：  \(x_{j}^{i}\)表示第i个训练样本中的第j歌特征值 \(x^i\)表示第i个训练样本的所有特征，一般是以列向量来表示。 m表示的是训练集的个数  ​">
+<meta property="og:description" content="主题：学习 scipy中出现的关于matplotlib下的pyplot理解问题     LOL">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgcsgf29fpj209w05daa5.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgcsgfo84xj20ft08j3zw.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgctjdk1pqj20dp070aan.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgctjdwwvuj20e3075dgc.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgdv8r4ymyj20gi080jsc.jpg">
-<meta property="og:updated_time" content="2017-08-20T14:30:25.946Z">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fjixt0jguuj20db07h7a9.jpg">
+<meta property="og:image" content="http://s13.sinaimg.cn/large/001YjAkyzy79jGRs4cQ9c&690">
+<meta property="og:image" content="http://s9.sinaimg.cn/large/001YjAkyzy79jH6PHkI58&690">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjixszv2uwj20gy05qmxb.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjj3x5l1ioj20aw07ta9y.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjj3x60o7lj20ja0aidi2.jpg">
+<meta property="og:image" content="http://images.cnitblog.com/blog/413416/201301/29220639-06b363b5f4e14b9585be1be494712f8c.png">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjj3x6dtd2j20ac0743yc.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjj3x6qtckj20ad074dfq.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjj3x78pt8j20ad07ejrb.jpg">
+<meta property="og:updated_time" content="2017-09-14T07:09:50.107Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ng-03多元线性回归">
-<meta name="twitter:description" content="多元线性回归 1. 多重特征 ​ 多个特征下的线性回归问题又称为：多元线性回归。这里有几个专用名词需要解释一下：  \(x_{j}^{i}\)表示第i个训练样本中的第j歌特征值 \(x^i\)表示第i个训练样本的所有特征，一般是以列向量来表示。 m表示的是训练集的个数  ​">
-<meta name="twitter:image" content="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgcsgf29fpj209w05daa5.jpg">
+<meta name="twitter:title" content="matplotlib.pyplot使用说明">
+<meta name="twitter:description" content="主题：学习 scipy中出现的关于matplotlib下的pyplot理解问题     LOL">
+<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fjixt0jguuj20db07h7a9.jpg">
   
     <link rel="alternative" href="/atom.xml" title="丁小鲁的博客" type="application/atom+xml">
   
@@ -165,124 +170,127 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Ng03" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-chp3学习 " class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Ng-03多元线性回归
+      matplotlib.pyplot使用说明
     </h1>
   
 
         
-        <a href="/2017/06/07/Ng03/" class="archive-article-date">
-  	<time datetime="2017-06-07T10:44:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-07</time>
+        <a href="/2017/09/14/chp3学习 /" class="archive-article-date">
+  	<time datetime="2017-09-14T07:07:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="多元线性回归">多元线性回归</h1>
-<h3 id="多重特征">1. 多重特征</h3>
-<p>​ 多个特征下的线性回归问题又称为：<strong>多元线性回归</strong>。这里有几个专用名词需要解释一下：</p>
+        <hr>
+<p><strong>主题</strong>：学习 scipy中出现的关于matplotlib下的pyplot理解问题</p>
+<hr>
+<div align="center">
+<div class="figure">
+<img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fjixt0jguuj20db07h7a9.jpg" alt="LOL">
+<p class="caption">LOL</p>
+</div>
+</div>
+<a id="more"></a>
+<p>对于绘图的参数选择与其表达的意思有很大疑惑，觉得理解上是个困难，花一会功夫整理一下。</p>
+<h3 id="axes与figure的概念">1.axes与figure的概念</h3>
+<p>首先是在scipy-lectures.org网址上down下的tutorial中第60页出现了一段代码：<code>plt.axes([0.2,0.1,0.5,0.8])</code>，本人使用Ipython工具，在help(plt.axes)后出现：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&gt; Help on function axes in module matplotlib.pyplot:</div><div class="line">&gt; axes(*args, **kwargs)</div><div class="line">&gt;     Add an axes to the figure.</div><div class="line">&gt;     </div><div class="line">&gt;     The axes is added at position *rect* specified by:</div><div class="line">&gt;     </div><div class="line">&gt;     - ``axes()`` by itself creates a default full ``subplot(111)`` window axis.</div><div class="line">&gt;     </div><div class="line">&gt;     - ``axes(rect, axisbg=&apos;w&apos;)`` where *rect* = [left, bottom, width,</div><div class="line">&gt;       height] in normalized (0, 1) units.  *axisbg* is the background</div><div class="line">&gt;       color for the axis, default white.</div><div class="line">&gt;     </div><div class="line">&gt;     - ``axes(h)`` where *h* is an axes instance makes *h* the current</div><div class="line">&gt;       axis.  An :class:`~matplotlib.axes.Axes` instance is returned.</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>大体意思指为图片添加坐标，默认情形（无参数下）等同于完全覆盖，即<code>subplot(111)</code>。我们遇到的<code>plt.axes([0.2,0.1,0.5,0.8])</code>即参数<code>[0.2，0.1，0.5，0.8]</code>分别表示[left, bottom, width, height]，换句话来讲left代表在X轴的位置，bottom代表在Y轴的位置，width代表在X轴上向右延展的范围大小，height代表在Y轴中向上延展的范围大小，敝如第一个为0.2即表示x轴的起始点位整个横轴的（自左向右）10%。</p>
+<p><strong>注意：axes参数调整的范围仅包括如下图红线内范围，外围的刻度数值并不在之内。如设置为axes([0,0,1,1])将无法正确显示刻度。</strong></p>
+<div align="center">
+<div class="figure">
+<img src="http://s13.sinaimg.cn/large/001YjAkyzy79jGRs4cQ9c&amp;690">
+
+</div>
+</div>
+<p>相较于axes，figure的概念更易理解，画图需要生成一个figure（可以看作一块画布）[<em>灰色区域</em>]，此参数一般不需要设置，pypolt会自动创建一个（figure1），二者间关系为：</p>
+<div align="center">
+<div class="figure">
+<img src="http://s9.sinaimg.cn/large/001YjAkyzy79jH6PHkI58&amp;690">
+
+</div>
+</div>
+<p>简单测试：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line">x = np.arange(<span class="number">20</span>)</div><div class="line">y = np.cos(x)</div><div class="line">z = np.sin(x)</div><div class="line"></div><div class="line">plt.axes([<span class="number">0.2</span>, <span class="number">0.2</span>, <span class="number">0.4</span>, <span class="number">0.4</span>])</div><div class="line">plt.plot(x,y,<span class="string">'-'</span>)</div><div class="line">plt.axes([<span class="number">0.7</span>, <span class="number">0.2</span>, <span class="number">0.8</span>, <span class="number">0.6</span>])</div><div class="line">plt.plot(x,z,<span class="string">'-'</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<div align="center">
+<div class="figure">
+<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjixszv2uwj20gy05qmxb.jpg">
+
+</div>
+</div>
+<h3 id="pyplot模块">2.pyplot模块</h3>
+<p>matplotlib.pyplot模块方便与Matlab用户直接使用过渡到py的使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 简单绘制一条直线</span></div><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">plt.plot([<span class="number">0</span>,<span class="number">1</span>],[<span class="number">0</span>,<span class="number">1</span>])</div><div class="line">plt.title(<span class="string">"a straight line"</span>)</div><div class="line">plt.xlabel(<span class="string">"x value"</span>)</div><div class="line">plt.ylabel(<span class="string">"y value"</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<div class="figure">
+<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjj3x5l1ioj20aw07ta9y.jpg" alt="png">
+<p class="caption">png</p>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</div><div class="line">y = [<span class="number">2.3</span>,<span class="number">3.4</span>,<span class="number">1.2</span>,<span class="number">6.6</span>,<span class="number">7.0</span>]</div><div class="line"></div><div class="line">plt.figure(figsize=(<span class="number">12</span>,<span class="number">6</span>))</div><div class="line"></div><div class="line"><span class="comment"># 曲线绘制</span></div><div class="line">plt.subplot(<span class="number">231</span>)<span class="comment"># subplot的作用在于将多个子图放在同一张画板上</span></div><div class="line">plt.plot(x,y)</div><div class="line">plt.title(<span class="string">"plot"</span>)</div><div class="line"></div><div class="line"><span class="comment"># 散点图绘制</span></div><div class="line">plt.subplot(<span class="number">232</span>)</div><div class="line">plt.scatter(x, y)</div><div class="line">plt.title(<span class="string">"scatter"</span>)</div><div class="line"></div><div class="line"><span class="comment"># 饼图绘制</span></div><div class="line">plt.subplot(<span class="number">233</span>)</div><div class="line">plt.pie(y)</div><div class="line">plt.title(<span class="string">"pie"</span>)</div><div class="line"></div><div class="line"><span class="comment"># 条形图绘制</span></div><div class="line">plt.subplot(<span class="number">234</span>)</div><div class="line">plt.bar(x,y)</div><div class="line">plt.title(<span class="string">'bar'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 2-D 等高线图绘制</span></div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">delta = <span class="number">0.025</span></div><div class="line">x = y = np.arange(<span class="number">-3.0</span>,<span class="number">3.0</span>,delta)</div><div class="line">X,Y = np.meshgrid(x,y)</div><div class="line">Z = X**<span class="number">2</span> + Y**<span class="number">2</span></div><div class="line"></div><div class="line">plt.subplot(<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>)</div><div class="line">plt.contour(X,Y,Z)</div><div class="line">plt.colorbar()</div><div class="line">plt.title(<span class="string">'contour'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 2-D picture</span></div><div class="line">plt.subplot(<span class="number">2</span>,<span class="number">3</span>,<span class="number">6</span>)</div><div class="line">image = np.random.rand(<span class="number">30</span>,<span class="number">30</span>)</div><div class="line">plt.imshow(image,cmap=plt.cm.hot)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<div class="figure">
+<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjj3x60o7lj20ja0aidi2.jpg" alt="png">
+<p class="caption">png</p>
+</div>
+<p>为了满足面对对象的编程（0bject-oriented），我们需要引入两个类：Figure和FigureCanvas</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># object-oriented plot</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> matplotlib.figure <span class="keyword">import</span> Figure</div><div class="line"><span class="keyword">from</span> matplotlib.backends.backend_agg <span class="keyword">import</span> FigureCanvasAgg <span class="keyword">as</span> FigureCanvas</div><div class="line"></div><div class="line">fig    = Figure()</div><div class="line">canvas = FigureCanvas(fig)</div><div class="line">ax     = fig.add_axes([<span class="number">0.1</span>, <span class="number">0.1</span>, <span class="number">0.8</span>, <span class="number">0.8</span>])</div><div class="line"></div><div class="line">line,  = ax.plot([<span class="number">0</span>,<span class="number">1</span>], [<span class="number">0</span>,<span class="number">1</span>])</div><div class="line">ax.set_title(<span class="string">"a straight line (OO)"</span>)</div><div class="line">ax.set_xlabel(<span class="string">"x value"</span>)</div><div class="line">ax.set_ylabel(<span class="string">"y value"</span>)</div><div class="line"></div><div class="line">canvas.print_figure(<span class="string">'pp.png'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%matplotlib inline</div></pre></td></tr></table></figure>
+<p>这里我们共构建了四个对象： fig, canvas, ax, line。它们分别属于Figure类，FigureCanvas类，Axes类和Line2D类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fig.__class__.__name__</div></pre></td></tr></table></figure>
+<pre><code>&#39;Figure&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">canvas.__class__.__name__</div></pre></td></tr></table></figure>
+<pre><code>&#39;FigureCanvasAgg&#39;</code></pre>
+<p>各个对象之间有下面的对象隶属关系:<br>
+<img src="http://images.cnitblog.com/blog/413416/201301/29220639-06b363b5f4e14b9585be1be494712f8c.png"></p>
+<p>线条样式<br>
+plot（x,y,‘b-’）</p>
 <ul>
-<li><span class="math inline">\(x_{j}^{i}\)</span>表示第i个训练样本中的第j歌特征值</li>
-<li><span class="math inline">\(x^i\)</span>表示第i个训练样本的所有特征，一般是以列向量来表示。</li>
-<li>m表示的是训练集的个数</li>
+<li>‘-’：实线</li>
+<li>‘–’：虚线</li>
+<li>‘-.’：点划线</li>
+<li><p>‘：’：点</p></li>
+<li>‘*’：星形</li>
+<li>‘s’：正方形</li>
+<li>‘+’：+形</li>
+<li><p>‘x’：X形</p></li>
 </ul>
-<p>​ <a id="more"></a></p>
-<p>​ 多元形式下的假设函数可以设为：<span class="math inline">\(h_\theta(x)=\theta_0+\theta_1x_1+\theta_2x_2+...+\theta_nx_n\)</span> ，为更直观的表示这个函数，我们将<span class="math inline">\(\theta_0\)</span>看作房子的基本价格，将<span class="math inline">\(\theta_1\)</span>看为每平方米的价格，将<span class="math inline">\(\theta_2\)</span>看为每层的价格，等等。此时<span class="math inline">\(x_1\)</span>表示的是房子的平方米，<span class="math inline">\(x_2\)</span>为房屋的楼层数，等等。以矩阵的形式表达为：</p>
-<p><span class="math inline">\(h_{\theta}(x)=[\theta_0 \theta_1 ... \theta_n]\begin{bmatrix}x_0\\ x_1\\..\\ \end{bmatrix}=\theta^Tx\)</span></p>
-<h3 id="多变量下的梯度下降法">2. 多变量下的梯度下降法</h3>
-<p>​ 梯度下降的表现形式相同，这里将特征数拓广至n个：（重复运行直至集聚）</p>
-<div align="center">
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = np.arange(<span class="number">10</span>)</div><div class="line">y = np.sqrt(x)</div><div class="line"></div><div class="line">plt.plot(x,y,<span class="string">'rs'</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
 <div class="figure">
-<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgcsgf29fpj209w05daa5.jpg" alt="mul-var convergrnce">
-<p class="caption">mul-var convergrnce</p>
+<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjj3x6dtd2j20ac0743yc.jpg" alt="png">
+<p class="caption">png</p>
 </div>
-</div>
-<p>​ 可以简写为公式代表：<span class="math inline">\(\theta_j :=\theta_j - \alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})\cdot x_j^{(i)}\)</span>其中j=0、1、…n</p>
-<p>​ 具体的，可以通过下图对单变量和多特征变量下的梯度算法进行比较：</p>
-<div align="center">
+<p>matplotlib还提供了一个名为pylab的模块，其中包括了许多NumPy和pyplot模块中常用的函数，方便用户快速进行计算和绘图，十分适合在IPython交互式环境中使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pylab <span class="keyword">as</span> pl</div><div class="line"> </div><div class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]<span class="comment"># Make an array of x values</span></div><div class="line">y = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>]<span class="comment"># Make an array of y values for each x value</span></div><div class="line"> </div><div class="line">pl.plot(x, y)<span class="comment"># use pylab to plot x and y</span></div><div class="line">pl.show()<span class="comment"># show the plot on the screen</span></div></pre></td></tr></table></figure>
 <div class="figure">
-<img src="http://wx4.sinaimg.cn/mw690/7b8d2108gy1fgcsgfo84xj20ft08j3zw.jpg" alt="grad descent">
-<p class="caption">grad descent</p>
+<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjj3x6qtckj20ad074dfq.jpg" alt="png">
+<p class="caption">png</p>
 </div>
-</div>
-<h3 id="梯度下降之特征缩放">3. 梯度下降之特征缩放</h3>
-<p>​ 我们可以同过将输入的值统一在同一个范围内以加快梯度下降的运算速度，这是因为参数<span class="math inline">\(\theta\)</span>在较小的数集中相比较大的数集变化快，且较大的数集下，会出现很长时间的震荡现象（即在最小值附近徘徊）。这里介绍一种有效的方式，主要通过改变输入的值在相同的范围内以规避以上的不利现象。</p>
-<p>​ 理想的情况 为：<span class="math inline">\(-1\leq x_{(i)}\leq1\)</span>或<span class="math inline">\(-0.5\leq x_{(i)}\leq0.5\)</span></p>
-<p>​ 主要有两种技术以统一变量：<strong>特征缩放</strong>（feature scaling）和<strong>均值归一化处理</strong> (mean normalization)</p>
-<p>​ 特征缩放将输入变量除以输入值的范围（即最大值减去最小值），从而在一个新的范围只有1。均值归一化包括从输入变量的值减去输入变量的平均值，从而使输入变量的新平均值为零，具体如下：<span class="math inline">\(x_i := \frac{x_i-\mu _i}{s_i}\)</span></p>
-<p>​ 式中的<span class="math inline">\(\mu_i\)</span>表示输入特征值得平均值，<span class="math inline">\(s_i\)</span>可为取值范围（最大-最小），或可为标准差。</p>
-<p>​ 比如：对于<span class="math inline">\(x_i\)</span>代表房价，其范围为100-2000，其平均值为1000，有：<span class="math inline">\(x_i := \frac{price-\mu _i}{s_i}\)</span></p>
-<h3 id="学习速率">4. 学习速率</h3>
-<p>​ 调试梯度下降：将每一步计算出的代价函数<span class="math inline">\(J(\theta)\)</span>绘出图形，当代价函数函数有上升趋势时，或许该降低学习速率<span class="math inline">\(\alpha\)</span>取值。</p>
-<p>​ 当每一步下的代价函数的计算值在缩减，且缩减小于某个值E(这里E的取值一般小于<span class="math inline">\(10^{-3}\)</span>，此时可以说明代价函数已经收敛（汇集），但一般该限值E很难确定。</p>
-<div align="center">
+<p><strong>加入LaTeX公式的支持</strong><br>
+在matplotlib里面，可以使用LaTex的命令来编辑公式，只需要在字符串前面加一个“r”即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plt.plot(x, y,label =<span class="string">r"$\alpha &gt; \beta$"</span>,color=<span class="string">'red'</span>,linewidth = <span class="number">3</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
 <div class="figure">
-<img src="http://wx1.sinaimg.cn/mw690/7b8d2108gy1fgctjdk1pqj20dp070aan.jpg" alt="alpha">
-<p class="caption">alpha</p>
+<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fjj3x78pt8j20ad07ejrb.jpg" alt="png">
+<p class="caption">png</p>
 </div>
-</div>
-<p>​ 可以说明：当学习速率<span class="math inline">\(\alpha\)</span>足够下，代价函数每一步都会在减少。</p>
-<div align="center">
-<div class="figure">
-<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgctjdwwvuj20e3075dgc.jpg" alt="learning rate">
-<p class="caption">learning rate</p>
-</div>
-</div>
-<p>​ 总结一下：如果学习速率<span class="math inline">\(\alpha\)</span>的取值过小会导致汇集很慢，同样当该值较大时，可等导致每一步并不都是递增，从而不会汇聚。<strong>一定要确保梯度下降运行的正确</strong></p>
-<h3 id="多特征与多项式回归">5. 多特征与多项式回归</h3>
-<p>​ 我们可以将多个特征组合为一个，比如：我们可以将<span class="math inline">\(x_1\)</span>和<span class="math inline">\(x_2\)</span>组合成一个<span class="math inline">\(x_3=x_1*x_2\)</span> 此外还可以将特征进行平方、立方等，这样做的原因是：我们<strong>基于线性回归的假设方程不足以很好的适应所有数据集</strong>。例如：起初的假设函数为：<span class="math inline">\(h_\theta(x)=\theta_0+\theta_1x_1\)</span>,我们可以在此基础之上增加一个平方项和立方项为：<span class="math inline">\(h_\theta(x)=\theta_0+\theta_1x_1+\theta_1x_1^2+\theta_1x_1^3\)</span>。</p>
-<p><strong>这里需要注意：当利用多项式回归时，不可忘记在上一部分所谈到的特征缩放，因为立方项与平方后的特征值是很大的，这不利于算法的快捷运算</strong></p>
-<h3 id="正则方程normal-equation">6. 正则方程（Normal Equation）</h3>
-<p>​ 梯度下降是最小化代价函数<span class="math inline">\(J(\theta)\)</span>的一种方式，这里提出了另一种方式即正则方式不使用迭代方式：<span class="math inline">\(\theta = (X^TX)^{-1}X^Ty\)</span>。<em>在正则方式中不需要对正则方程做尺度缩放。</em></p>
-<p>​ 举例如下（m=4）</p>
-<div align="center">
-<div class="figure">
-<img src="http://wx3.sinaimg.cn/mw690/7b8d2108gy1fgdv8r4ymyj20gi080jsc.jpg" alt="normal equation">
-<p class="caption">normal equation</p>
-</div>
-</div>
-<p>​ 下表给出了对于正则方程与梯度下降方法中差异：</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"><strong>梯度下降</strong></th>
-<th align="left"><strong>正则方程</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">需要选择学习速率alpha</td>
-<td align="left">不需选择alpha</td>
-</tr>
-<tr class="even">
-<td align="left">需要更多的步骤</td>
-<td align="left">不需要更多的迭代</td>
-</tr>
-<tr class="odd">
-<td align="left">算法复杂度(<span class="math inline">\(kn^2\)</span>)</td>
-<td align="left">算法复杂度(<span class="math inline">\(n^3\)</span>)，且需要计算<span class="math inline">\(X^TX\)</span></td>
-</tr>
-<tr class="even">
-<td align="left">n值很大时，本方法以上很好运行</td>
-<td align="left">n的数值越大，计算越慢</td>
-</tr>
-</tbody>
-</table>
-<p>​ 从最后一项可以看出，随n的增大，计算的速度越慢。实际操作中，当n超过10000时，利用梯度下降将是比正则方程更优的选择。</p>
-<p><strong><em>(补充)</em></strong>：关于正则方程X不可逆的问题</p>
-<p>​ 一般可能是以下两种原因导致<span class="math inline">\(X^TX\)</span>不可逆的情形出现：</p>
-<ul>
-<li>冗余特征出现：即特征集中出现了两个特征非常密切相关的（可以说是线性相关的）</li>
-<li>含有太多的特征（如<span class="math inline">\(m\leq n\)</span>）。此时可以对特征做适量的删减或使用正规则化（此部分在后面会接触）</li>
-</ul>
-<p>​ 实际的编程工具中，我们一般使用octave或matlab软件，而取逆函数名选取“pinv”而非“inv”，此时即使不可逆仍然能够给出一个值。</p>
+<p>上面的例子中：<br>
+<strong>label:</strong> 给所绘制的曲线一个名字，等同于：plt.title(r“$\alpha &gt; \beta$”)，只要在字符串前后添加“$”符号，matplotlib就会使用其内嵌的latex引擎绘制的数学公式<br>
+<strong>color:</strong> 指定曲线的颜色<br>
+<strong>linwidth:</strong> 指定线宽</p>
+<p><strong>对数坐标轴</strong></p>
+<p>在实际中，我们可能经常会用到对数坐标轴，这时可以用下面的三个函数来实现</p>
+<p>ax.semilogx(x,y) #x轴为对数坐标轴</p>
+<p>ax.semilogy(x,y) #y轴为对数坐标轴</p>
+<p>ax.loglog(x,y) #双对数坐标轴</p>
 
       
 
@@ -300,7 +308,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ng笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
@@ -356,7 +364,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/07/Ng03/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/14/chp3学习 /" alt="微信分享二维码">
     </div>
 </div>
 
@@ -370,18 +378,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/08/Ng04/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Ng-04练习题EX1
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/06/Ng02/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Ng-02单向量下的线性回归</div>
+    <a href="/2017/09/14/chp2学习 /" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我能分辨手写字母！</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -408,7 +407,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多元线性回归"><span class="toc-number">1.</span> <span class="toc-text">多元线性回归</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多重特征"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 多重特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多变量下的梯度下降法"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 多变量下的梯度下降法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#梯度下降之特征缩放"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 梯度下降之特征缩放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#学习速率"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 学习速率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多特征与多项式回归"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 多特征与多项式回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则方程normal-equation"><span class="toc-number">1.0.6.</span> <span class="toc-text">6. 正则方程（Normal Equation）</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#axes与figure的概念"><span class="toc-number">1.</span> <span class="toc-text">1.axes与figure的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pyplot模块"><span class="toc-number">2.</span> <span class="toc-text">2.pyplot模块</span></a></li></ol>
                     </div>
                 </span>
             </div>
